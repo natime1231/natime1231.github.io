@@ -1,6 +1,6 @@
 # NatnaelSinshaw.github.io
 
-# Natnael Sinshaw
+# NS
 Welcome to my personal portfolio!
 
 ## About Me
