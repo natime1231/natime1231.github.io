@@ -4,8 +4,8 @@ This repository contains a simple portfolio template designed for a data science
 
 ## Usage
 
-1. Update `index.html` with your name, biography, and project details.
+1. Update `index.html` with your name, biography, profile photo, and project details.
 2. Commit your changes and enable GitHub Pages in your repository settings.
 3. Your portfolio will be available at `https://<username>.github.io`.
 
-Feel free to modify the styles or structure to match your preferences.
+Feel free to modify the styles or structure to match your preferences, including adding sections for publications and awards.
