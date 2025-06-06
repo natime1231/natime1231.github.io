@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Data Science Portfolio</title>
+  <title>Natnael Sinshaw - Data Science Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -17,11 +18,30 @@
       padding: 1.5rem;
       text-align: center;
     }
+    .header-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    @media (min-width: 600px) {
+      .header-content {
+        flex-direction: row;
+      }
+      .header-content img {
+        margin-right: 1rem;
+      }
+    }
+    .profile-photo {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
     nav {
       margin-top: 1rem;
     }
     nav a {
-      margin: 0 1rem;
+      margin: 0 0.5rem;
       text-decoration: none;
       color: #333;
     }
@@ -36,48 +56,92 @@
       padding: 1rem 0;
       margin-top: 2rem;
     }
+    .icon-link {
+      margin-right: 1rem;
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>Placeholder Name</h1>
-    <p>PhD Student at the University of Houston</p>
+    <div class="header-content">
+      <img src="profile.jpg" alt="Natnael Sinshaw" class="profile-photo">
+      <div>
+        <h1>Natnael Sinshaw</h1>
+        <p>PhD Student, University of Houston</p>
+      </div>
+    </div>
     <nav>
       <a href="#about">About</a>
-      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
+      <a href="#publications">Publications</a>
+      <a href="#awards">Awards</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <section id="about">
     <h2>About Me</h2>
-    <p>This section will contain a brief biography and research interests related to data science and machine learning.</p>
+    <p>Data scientist passionate about ethical AI, computer vision and inclusivity in machine learning. Experienced in teaching and research, currently pursuing a PhD in Computer Science.</p>
   </section>
 
-  <section id="skills">
-    <h2>Skills</h2>
+  <section id="education">
+    <h2>Education</h2>
     <ul>
-      <li>Programming Languages: Python, R (placeholder)</li>
-      <li>Machine Learning Libraries: TensorFlow, PyTorch (placeholder)</li>
-      <li>Data Visualization: matplotlib, seaborn (placeholder)</li>
-      <li>Other: add more here</li>
+      <li><strong>University of Houston</strong> — PhD in Computer Science (Aug 2024 - May 2028)</li>
+      <li><strong>Addis Ababa Science and Technology University</strong> — MSc in Software Engineering (Jan 2018 - Jan 2021)</li>
+      <li><strong>Addis Ababa Science and Technology University</strong> — BSc in Computer Science and IT (Jan 2015 - Jun 2018)</li>
+    </ul>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <ul>
+      <li><strong>Teaching Assistant</strong>, University of Houston (Feb 2025 - May 2025)</li>
+      <li><strong>Research Assistant</strong>, Computational Biomedicine Lab (Aug 2024 - Jan 2025)</li>
+      <li><strong>AI Diversity & Inclusion Research Lead</strong>, GRAIN Network (Jan 2023 - Dec 2024)</li>
+      <li><strong>Department Head of Software Engineering</strong>, ACT American College (Oct 2023 - Sep 2024)</li>
+      <li><strong>Academic and Research Assistant</strong>, Addis Ababa Science and Technology University (Sep 2018 - Aug 2020)</li>
     </ul>
   </section>
 
   <section id="projects">
     <h2>Projects</h2>
-    <p>Include projects or publications that showcase your expertise. Add links as necessary.</p>
+    <p>Include projects that showcase your expertise. Add links as necessary.</p>
+  </section>
+
+  <section id="publications">
+    <h2>Publications</h2>
+    <ul>
+      <li>"Artificial Intelligence Assisted Early Blight and Late Blight Potato Disease Detection Using CNN," <em>Ethiopian Journal of Crop Science</em>, 2020.</li>
+      <li>"Transfer learning and data augmentation based CNN model for potato late blight disease detection," <em>ICT4DA</em>, 2021.</li>
+      <li>"Applications of computer vision on automatic potato plant disease detection: A systematic literature review," <em>Computational Intelligence and Neuroscience</em>, 2022.</li>
+    </ul>
+  </section>
+
+  <section id="awards">
+    <h2>Awards</h2>
+    <ul>
+      <li>Eni Award: Debut in Research - Young Talents from Africa Prize (Jun 2023)</li>
+      <li>Best Paper Award: Crop Improvement & Biotechnology, CSS Ethiopia Conference (Dec 2020)</li>
+      <li>MSc Scholarship for Academically Outstanding Students (Sep 2018)</li>
+      <li>Best BSc Final Project (Jan 2018)</li>
+      <li>Academic Outstanding Achievement (Dec 2017)</li>
+    </ul>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
     <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile">https://www.linkedin.com/in/yourprofile</a></p>
+    <p>
+      <a href="https://www.linkedin.com/in/natnaelsinshaw/" class="icon-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="https://orcid.org/0000-0002-3024-4992" class="icon-link"><i class="fab fa-orcid"></i> ORCID</a>
+    </p>
   </section>
 
   <footer>
-    <p>&copy; 2024 Placeholder Name</p>
+    <p>&copy; 2024 Natnael Sinshaw</p>
   </footer>
 </body>
 </html>
