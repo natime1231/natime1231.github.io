@@ -17,6 +17,25 @@
       padding: 1.5rem;
       text-align: center;
     }
+    .header-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    @media (min-width: 600px) {
+      .header-content {
+        flex-direction: row;
+      }
+      .header-content img {
+        margin-right: 1rem;
+      }
+    }
+    .profile-photo {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
     nav {
       margin-top: 1rem;
     }
@@ -40,12 +59,19 @@
 </head>
 <body>
   <header>
-    <h1>Placeholder Name</h1>
-    <p>PhD Student at the University of Houston</p>
+    <div class="header-content">
+      <img src="profile.jpg" alt="Profile photo" class="profile-photo">
+      <div>
+        <h1>Placeholder Name</h1>
+        <p>PhD Student at the University of Houston</p>
+      </div>
+    </div>
     <nav>
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
+      <a href="#publications">Publications</a>
+      <a href="#awards">Awards</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -67,7 +93,21 @@
 
   <section id="projects">
     <h2>Projects</h2>
-    <p>Include projects or publications that showcase your expertise. Add links as necessary.</p>
+    <p>Include projects that showcase your expertise. Add links as necessary.</p>
+  </section>
+
+  <section id="publications">
+    <h2>Publications</h2>
+    <ul>
+      <li><a href="#">Example Paper Title</a> - Journal Name, 2024</li>
+    </ul>
+  </section>
+
+  <section id="awards">
+    <h2>Awards</h2>
+    <ul>
+      <li>Example Award Name, 2023</li>
+    </ul>
   </section>
 
   <section id="contact">
