@@ -4,32 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Natnael Tilahun Sinshaw</title>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     :root {
-      --primary:#0055a5;
-      --primary-light:#e6f0fa;
-      --text:#333;
-      --bg:#ffffff;
+      --primary: #0055a5;
+      --primary-light: #e6f0fa;
+      --text: #333;
+      --bg: #ffffff;
     }
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
-    header{background:var(--primary-light);padding:2rem 1rem;text-align:center}
-    .header-content{display:flex;flex-direction:column;align-items:center;gap:1rem}
-    @media(min-width:600px){.header-content{flex-direction:row}}
-    .profile-photo{width:150px;height:150px;border-radius:50%;object-fit:cover;border:4px solid var(--primary)}
-    nav{margin-top:1.5rem}
-    nav a{margin:0 0.75rem;color:var(--primary);text-decoration:none;font-weight:bold;transition:color .2s}
-    nav a:hover{color:#002d5c}
-    section{padding:2rem 1rem;max-width:900px;margin:auto}
-    section h2{color:var(--primary);margin-bottom:1rem}
-    ul{list-style-type:disc;margin-left:1.25rem}
-    footer{background:var(--primary-light);text-align:center;padding:1rem;margin-top:2rem;color:var(--primary)}
-    .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem}
-    .skill-card{background:#fafafa;border:1px solid #ddd;padding:1rem;border-radius:8px}
-    .project-card{border-left:4px solid var(--primary);padding-left:1rem;margin-bottom:1rem}
-    .pub-link{margin-left:0.5rem;font-size:0.9rem}
-    a.pub-link{color:var(--primary)}
-    .btn{display:inline-block;background:var(--primary);color:#fff;padding:0.5rem 1rem;border-radius:4px;text-decoration:none;margin-top:0.5rem}
+    * {box-sizing: border-box; margin: 0; padding: 0;}
+    body {font-family: Arial, Helvetica, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6;}
+    header {background: var(--primary-light); padding: 2rem 1rem; text-align: center;}
+    .header-content {display: flex; flex-direction: column; align-items: center; gap: 1rem;}
+    @media(min-width: 600px) { .header-content {flex-direction: row;} }
+    .profile-photo {width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 4px solid var(--primary);}
+    /* Transparent sticky nav */
+    nav {position: sticky; top: 0; background: rgba(255, 255, 255, 0.75); backdrop-filter: blur(6px); padding: 0.75rem 1rem; z-index: 1000; display: flex; justify-content: center; flex-wrap: wrap; column-gap: 1rem;}
+    nav a {display: inline-flex; align-items: center; gap: 0.35rem; color: var(--primary); font-weight: 600; text-decoration: none; transition: color .25s ease;}
+    nav a:hover {color: #002d5c;}
+    section {padding: 2rem 1rem; max-width: 900px; margin: auto;}
+    section h2 {color: var(--primary); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;}
+    ul {list-style-type: disc; margin-left: 1.25rem;}
+    footer {background: var(--primary-light); text-align: center; padding: 1rem; margin-top: 2rem; color: var(--primary);}
+    /* Cards & grids */
+    .skills-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;}
+    .skill-card {background: #fafafa; border: 1px solid #ddd; padding: 1rem; border-radius: 8px;}
+    .project-card {border-left: 4px solid var(--primary); padding-left: 1rem; margin-bottom: 1.25rem;}
+    .pub-link {margin-left: 0.5rem; font-size: 0.9rem;}
+    a.pub-link {color: var(--primary); text-decoration: none;}
+    a.pub-link:hover {text-decoration: underline;}
+    .btn {display: inline-block; background: var(--primary); color: #fff; padding: 0.5rem 1rem; border-radius: 4px; text-decoration: none; margin-top: 0.5rem; transition: background .25s ease;}
+    .btn:hover {background: #003d7a;}
   </style>
 </head>
 <body>
@@ -39,29 +45,30 @@
       <div>
         <h1>Natnael Tilahun Sinshaw</h1>
         <p>PhD Student, University of Houston – Machine Learning &amp; Responsible AI</p>
-        <a href="Natnael_Sinshaw_CV.pdf" class="btn" target="_blank">Download CV</a>
+        <a href="Natnael_Sinshaw_CV.pdf" class="btn" target="_blank"><i class="fas fa-file-lines"></i> Download CV</a>
       </div>
     </div>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#publications">Publications</a>
-      <a href="#awards">Awards</a>
-      <a href="#contact">Contact</a>
-    </nav>
   </header>
+  
+  <nav>
+    <a href="#about"><i class="fas fa-user"></i><span>About</span></a>
+    <a href="#skills"><i class="fas fa-lightbulb"></i><span>Skills</span></a>
+    <a href="#projects"><i class="fas fa-diagram-project"></i><span>Projects</span></a>
+    <a href="#publications"><i class="fas fa-book"></i><span>Publications</span></a>
+    <a href="#awards"><i class="fas fa-award"></i><span>Awards</span></a>
+    <a href="#contact"><i class="fas fa-envelope"></i><span>Contact</span></a>
+  </nav>
 
   <section id="about">
-    <h2>About Me</h2>
+    <h2><i class="fas fa-user"></i>About Me</h2>
     <p>I am a doctoral researcher at the University of Houston focused on machine learning, responsible AI, and linguistic diversity. My work explores equitable AI systems for under‑represented languages, combining deep learning with socio‑technical perspectives. I enjoy translating research insights into deployable solutions and engaging with interdisciplinary teams to drive impact.</p>
   </section>
 
   <section id="skills">
-    <h2>Skills</h2>
+    <h2><i class="fas fa-lightbulb"></i>Skills</h2>
     <div class="skills-grid">
       <div class="skill-card">
-        <h3>Programming Languages</h3>
+        <h3><i class="fas fa-code"></i> Programming Languages</h3>
         <ul>
           <li>Python</li>
           <li>R</li>
@@ -70,16 +77,16 @@
         </ul>
       </div>
       <div class="skill-card">
-        <h3>ML / DL Frameworks</h3>
+        <h3><i class="fas fa-robot"></i> ML / DL Frameworks</h3>
         <ul>
           <li>TensorFlow &amp; Keras</li>
           <li>PyTorch</li>
           <li>Scikit‑learn</li>
-          <li>Hugging Face Transformers</li>
+          <li>Hugging Face Transformers</li>
         </ul>
       </div>
       <div class="skill-card">
-        <h3>Data &amp; Visualization</h3>
+        <h3><i class="fas fa-chart-column"></i> Data &amp; Visualization</h3>
         <ul>
           <li>Pandas &amp; NumPy</li>
           <li>Matplotlib</li>
@@ -88,7 +95,7 @@
         </ul>
       </div>
       <div class="skill-card">
-        <h3>Cloud &amp; DevOps</h3>
+        <h3><i class="fas fa-cloud"></i> Cloud &amp; DevOps</h3>
         <ul>
           <li>AWS (S3, EC2, SageMaker)</li>
           <li>Docker &amp; Compose</li>
@@ -96,7 +103,7 @@
         </ul>
       </div>
       <div class="skill-card">
-        <h3>Soft Skills</h3>
+        <h3><i class="fas fa-people-group"></i> Soft Skills</h3>
         <ul>
           <li>Problem‑Solving</li>
           <li>Critical Thinking</li>
@@ -108,56 +115,67 @@
   </section>
 
   <section id="projects">
-    <h2>Projects</h2>
+    <h2><i class="fas fa-diagram-project"></i>Projects</h2>
     <div class="project-card">
-      <h3>Project Alpha – Multimodal RAG Chatbot</h3>
+      <h3><i class="fas fa-robot"></i> Project Alpha – Multimodal RAG Chatbot</h3>
       <p>A demo application integrating Retrieval‑Augmented Generation with image &amp; text inputs.</p>
     </div>
     <div class="project-card">
-      <h3>Project Beta – Fair Gender Classification</h3>
+      <h3><i class="fas fa-scale-unbalanced"></i> Project Beta – Fair Gender Classification</h3>
       <p>Logic Tensor Network‑based classifier with stereotype‑mitigation axioms.</p>
     </div>
     <div class="project-card">
-      <h3>Project Gamma – Crop Disease Detection API</h3>
+      <h3><i class="fas fa-seedling"></i> Project Gamma – Crop Disease Detection API</h3>
       <p>Edge‑deployable CNN for plant disease identification on mobile devices.</p>
     </div>
   </section>
 
   <section id="publications">
-    <h2>Publications</h2>
+    <h2><i class="fas fa-book"></i>Publications</h2>
     <ul>
-      <li>Transfer Learning &amp; Data Augmentation‑Based CNN Model for Potato Late Blight Disease Detection — Proc. ICT4DA, 2021 <a class="pub-link" href="https://ieeexplore.ieee.org/abstract/document/9672243" target="_blank">[Link]</a></li>
-      <li>Applications of Computer Vision on Automatic Potato Plant Disease Detection: A Systematic Literature Review — <em>Computational Intelligence &amp; Neuroscience</em>, 2022 <a class="pub-link" href="https://doi.org/10.1155/2022/7186687" target="_blank">[Link]</a></li>
-      <li>Amharic Handwritten &amp; Machine‑Printed Character Recognition Using Deep CNN with Random‑Search Hyper‑Parameter Optimization — Pre‑print, 2023 <a class="pub-link" href="https://doi.org/10.21203/rs.3.rs-2878655/v1" target="_blank">[Link]</a></li>
-      <li>Enhanced Throttled Load‑Balancing Algorithm for Optimizing Cloud‑Computing Efficiency — in <em>Privacy Preservation &amp; Secured Data Storage in Cloud Computing</em>, IGI Global, 2023 <a class="pub-link" href="https://www.igi-global.com/chapter/enhanced-throttled-load-balancing-algorithm-for-optimizing-cloud-computing-efficiency/333139" target="_blank">[Link]</a></li>
-      <li>Transfer‑Learning‑Based Breast Cancer Classification via Deep Convolutional Neural Network — <em>International Journal of Engineering &amp; Manufacturing</em>, 2023 <a class="pub-link" href="https://www.mecs-press.org/ijem/ijem-v13-n4/v13n4-4.html" target="_blank">[Link]</a></li>
-      <li>Sigatoka &amp; Xanthomonas Banana Leaf Disease Detection via Transfer Learning — <em>Scientia Iranica</em>, 2025 <a class="pub-link" href="https://scientiairanica.sharif.edu/article_23585.html" target="_blank">[Link]</a></li>
+      <li>Transfer Learning &amp; Data Augmentation‑Based CNN Model for Potato Late Blight Disease Detection — Proc. ICT4DA, 2021 <a class="pub-link" href="https://ieeexplore.ieee.org/abstract/document/9672243" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+      <li>Applications of Computer Vision on Automatic Potato Plant Disease Detection: A Systematic Literature Review — <em>Computational Intelligence &amp; Neuroscience</em>, 2022 <a class="pub-link" href="https://doi.org/10.1155/2022/7186687" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+      <li>Amharic Handwritten &amp; Machine‑Printed Character Recognition Using Deep CNN with Random‑Search Hyper‑Parameter Optimization — Pre‑print, 2023 <a class="pub-link" href="https://doi.org/10.21203/rs.3.rs-2878655/v1" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+      <li>Enhanced Throttled Load‑Balancing Algorithm for Optimizing Cloud‑Computing Efficiency — in <em>Privacy Preservation &amp; Secured Data Storage in Cloud Computing</em>, IGI Global, 2023 <a class="pub-link" href="https://www.igi-global.com/chapter/enhanced-throttled-load-balancing-algorithm-for-optimizing-cloud-computing-efficiency/333139" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+      <li>Transfer‑Learning‑Based Breast Cancer Classification via Deep Convolutional Neural Network — <em>International Journal of Engineering &amp; Manufacturing</em>, 2023 <a class="pub-link" href="https://www.mecs-press.org/ijem/ijem-v13-n4/v13n4-4.html" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+      <li>Sigatoka &amp; Xanthomonas Banana Leaf Disease Detection via Transfer Learning — <em>Scientia Iranica</em>, 2025 <a class="pub-link" href="https://scientiairanica.sharif.edu/article_23585.html" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
       <li>Diversity and Inclusiveness of the AI Ecosystem in the Context of Indigenous African Languages: A Critical Analysis — <em>Minds and Machines</em>, under review</li>
     </ul>
   </section>
 
   <section id="awards">
-    <h2>Awards &amp; Honors</h2>
+    <h2><i class="fas fa-award"></i>Awards &amp; Honors</h2>
     <ul>
-      <li>Eni Award – Debut in Research: Young Talents from Africa Prize, 2023</li>
-      <li>AI for Linguistic Diversity and Inclusion Grant – Gender and Responsible AI (GRAIN), 2023</li>
-      <li>Best Paper Award – Crop Improvement &amp; Biotechnology, 18<sup>th</sup> Crop Science Society of Ethiopia Conference, 2020</li>
-      <li>MSc Scholarship for Academically Outstanding Students, Addis Ababa Science &amp; Technology University, 2018</li>
-      <li>Best BSc Final Project Award, Department of Computer Science, 2018</li>
-      <li>Academic Outstanding Achievement Award, Ethiopian Chinese Chamber of Commerce, 2017</li>
+      <li>Eni Award – Debut in Research: Young Talents from Africa Prize, 2023</li>
+      <li>AI for Linguistic Diversity and Inclusion Grant – Gender and Responsible AI (GRAIN), 2023</li>
+      <li>Best Paper Award – Crop Improvement &amp; Biotechnology, 18<sup>th</sup> Crop Science Society of Ethiopia Conference, 2020</li>
+      <li>MSc Scholarship for Academically Outstanding Students, Addis Ababa Science &amp; Technology University, 2018</li>
+      <li>Best BSc Final Project Award, Department of Computer Science, 2018</li>
+      <li>Academic Outstanding Achievement Award, Ethiopian Chinese Chamber of Commerce, 2017</li>
     </ul>
   </section>
 
   <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:email@example.com">email@example.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/example" target="_blank">linkedin.com/in/example</a></p>
-    <p>GitHub: <a href="https://github.com/example" target="_blank">github.com/example</a></p>
-    <p>Google Scholar: <a href="https://scholar.google.com/citations?user=example" target="_blank">Google Scholar Profile</a></p>
+    <h2><i class="fas fa-envelope"></i>Contact</h2>
+    <p><i class="fas fa-envelope"></i> Email: <a href="mailto:email@example.com">email@example.com</a></p>
+    <p><i class="fab fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/example" target="_blank">linkedin.com/in/example</a></p>
+    <p><i class="fab fa-github"></i> GitHub: <a href="https://github.com/example" target="_blank">github.com/example</a></p>
+    <p><i class="fas fa-graduation-cap"></i> Google Scholar: <a href="https://scholar.google.com/citations?user=example" target="_blank">Google Scholar Profile</a></p>
   </section>
 
   <footer>
-    <p>© 2024 Natnael Tilahun Sinshaw</p>
+    <p>© 2024 Natnael Tilahun Sinshaw — Page views: <span id="visit-count">0</span></p>
   </footer>
+
+  <!-- Visitor tracking (localStorage based) -->
+  <script>
+    (function(){
+      const visitCountEl = document.getElementById('visit-count');
+      let visits = Number(localStorage.getItem('portfolioVisits') || 0);
+      visits += 1;
+      localStorage.setItem('portfolioVisits', visits);
+      visitCountEl.textContent = visits.toLocaleString();
+    })();
+  </script>
 </body>
 </html>
