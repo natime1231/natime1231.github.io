@@ -1,186 +1,471 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Natnael Tilahun Sinshaw</title>
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Natnael Tilahun Sinshaw | PhD Student, Computer Science</title>
+  <meta name="description" content="Portfolio of Natnael Tilahun Sinshaw, PhD student in Computer Science at the University of Houston. Research in responsible AI, algorithmic fairness, multilingual NLP, and applied machine learning.">
+  <meta name="theme-color" content="#0b5ed7">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     :root {
-      --primary: #0066cc;
-      --primary-dark: #004a99;
-      --primary-light: #e6f2ff;
-      --accent: #f5f9ff;
-      --text: #222;
-      --bg: #fdfdfd;
+      --bg: #0b0c10;
+      --panel: #111318;
+      --muted: #98a2b3;
+      --text: #e6e7ea;
+      --brand: #0b5ed7;
+      --brand-600: #094eb2;
+      --ring: rgba(11,94,215,0.35);
+      --card: #0e1014;
+      --chip: #151923;
+      --ok: #17b26a;
+      --warn: #ef6820;
     }
-    * {box-sizing: border-box; margin: 0; padding: 0;}
-    body {font-family: 'Poppins', Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6;}
-    header {background: linear-gradient(135deg, var(--primary), var(--primary-dark)); padding: 3rem 1rem; text-align: center; color: #fff;}
-    .header-content {display: flex; flex-direction: column; align-items: center; gap: 1rem;}
-    @media(min-width: 600px) { .header-content {flex-direction: row;} }
-    .profile-photo {width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 4px solid var(--primary);}
-    /* Sticky nav */
-    nav {position: sticky; top: 0; background: var(--bg); padding: 0.75rem 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 1000; display: flex; justify-content: center; flex-wrap: wrap; column-gap: 1rem;}
-    nav a {display: inline-flex; align-items: center; gap: 0.35rem; color: var(--primary); font-weight: 500; text-decoration: none; transition: color .25s ease;}
-    nav a:hover {color: var(--primary-dark);}
-    section {padding: 2rem 1.5rem; max-width: 900px; margin: 2rem auto; background: #fff; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.05);}
-    section h2 {color: var(--primary); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;}
-    ul {list-style-type: disc; margin-left: 1.25rem;}
-    footer {background: var(--primary-light); text-align: center; padding: 1rem; margin-top: 2rem; color: var(--primary);}
-    /* Cards & grids */
-    .skills-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;}
-    .skill-card {background: #fafafa; border: 1px solid #ddd; padding: 1rem; border-radius: 8px;}
-    .project-card {border-left: 4px solid var(--primary); padding-left: 1rem; margin-bottom: 1.25rem;}
-    .pub-link {margin-left: 0.5rem; font-size: 0.9rem;}
-    a.pub-link {color: var(--primary); text-decoration: none;}
-    a.pub-link:hover {text-decoration: underline;}
-    .btn {display: inline-block; background: var(--primary); color: #fff; padding: 0.5rem 1.25rem; border-radius: 4px; text-decoration: none; margin-top: 0.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.15); transition: background .25s ease;}
-    .btn:hover {background: var(--primary-dark);}
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f7f7f8;
+        --panel: #ffffff;
+        --muted: #475467;
+        --text: #111827;
+        --brand: #0b5ed7;
+        --brand-600: #094eb2;
+        --ring: rgba(11,94,215,0.25);
+        --card: #ffffff;
+        --chip: #eef2ff;
+      }
+    }
+    * { box-sizing: border-box }
+    html, body { height: 100% }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a { color: var(--brand); text-decoration: none }
+    a:hover { text-decoration: underline }
+    .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 20px }
+
+    .skip-link { position: absolute; left: -9999px; top: auto }
+    .skip-link:focus { left: 16px; top: 16px; background: var(--brand); color: #fff; padding: 10px 14px; border-radius: 10px }
+
+    /* Header */
+    header {
+      background: radial-gradient(1200px 600px at 10% -10%, rgba(11,94,215,0.25), transparent),
+                  radial-gradient(1000px 500px at 90% -20%, rgba(11,94,215,0.18), transparent),
+                  linear-gradient(180deg, rgba(255,255,255,0.02), transparent 40%);
+      padding: 64px 0 24px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .head { display: grid; grid-template-columns: 96px 1fr auto; gap: 20px; align-items: center }
+    .avatar { width: 96px; height: 96px; border-radius: 16px; object-fit: cover; border: 2px solid rgba(255,255,255,0.08); box-shadow: 0 10px 30px rgba(0,0,0,0.25) }
+    h1 { font-size: clamp(26px, 3.4vw, 36px); margin: 0 0 6px 0 }
+    .subtitle { color: var(--muted); margin: 0 0 12px 0 }
+    .pill-row { display: flex; flex-wrap: wrap; gap: 8px }
+    .pill { background: var(--chip); color: var(--text); padding: 6px 10px; border-radius: 999px; font-size: 12px; border: 1px solid rgba(255,255,255,0.05) }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px }
+    .btn { display: inline-flex; align-items: center; gap: 10px; background: var(--brand); color: #fff; padding: 10px 14px; border-radius: 12px; text-decoration: none; font-weight: 600; box-shadow: 0 8px 20px rgba(11,94,215,0.25); transition: transform .15s ease }
+    .btn:hover { background: var(--brand-600) }
+    .btn:active { transform: translateY(1px) }
+    .btn.ghost { background: transparent; color: var(--brand); border: 1px solid var(--brand); box-shadow: none }
+    .toolbar { display: flex; gap: 10px; align-items: center }
+    .icon-btn { width: 40px; height: 40px; display: inline-grid; place-items: center; border-radius: 12px; background: var(--chip); border: 1px solid rgba(255,255,255,0.06); cursor: pointer }
+
+    /* Nav */
+    nav { position: sticky; top: 0; z-index: 50; background: rgba(6,7,10,0.75); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.06) }
+    @media (prefers-color-scheme: light) { nav { background: rgba(255,255,255,0.85) } }
+    .nav-wrap { display: flex; gap: 18px; overflow-x: auto; padding: 10px 0 }
+    .nav-link { color: var(--muted); padding: 8px 10px; border-radius: 10px; white-space: nowrap }
+    .nav-link.active, .nav-link:hover { color: var(--text); background: rgba(255,255,255,0.06) }
+
+    /* Sections */
+    section { padding: 28px 0 }
+    .panel { background: var(--panel); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 22px }
+    .section-title { display: flex; align-items: center; gap: 10px; margin: 0 0 14px 0; font-size: 20px }
+    .muted { color: var(--muted) }
+
+    /* Layout helpers */
+    .grid { display: grid; gap: 14px }
+    .grid.auto { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)) }
+
+    /* Cards */
+    .card { background: var(--card); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; padding: 16px; transition: transform .15s ease, box-shadow .15s ease }
+    .card:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(0,0,0,0.25) }
+    .card h3 { margin: 0 0 6px 0; font-size: 16px }
+    .card p { margin: 0 }
+    .meta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; font-size: 13px; color: var(--muted) }
+    .badge { background: rgba(11,94,215,0.18); border: 1px solid rgba(11,94,215,0.35); color: #cfe1ff; padding: 2px 8px; border-radius: 999px; font-size: 12px; cursor: pointer }
+    @media (prefers-color-scheme: light) { .badge { color: #0b3a87 } }
+
+    /* Publications */
+    details.pub { border: 1px solid rgba(255,255,255,0.06); background: var(--card); padding: 12px 14px; border-radius: 12px }
+    details.pub + details.pub { margin-top: 10px }
+    .pub-title { font-weight: 600 }
+    .pub-venue { font-size: 13px; color: var(--muted) }
+    .pub-links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px }
+
+    /* Timeline */
+    .timeline { position: relative; padding-left: 18px }
+    .timeline::before { content: ""; position: absolute; left: 6px; top: 2px; bottom: 2px; width: 2px; background: rgba(255,255,255,0.1) }
+    .tl-item { position: relative; padding: 8px 0 8px 16px }
+    .tl-item::before { content: ""; position: absolute; left: -2px; top: 14px; width: 10px; height: 10px; border-radius: 999px; background: var(--brand) }
+
+    /* Footer */
+    footer { padding: 22px 0; color: var(--muted) }
+
+    /* Toast */
+    .toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); background: #111; color: #fff; padding: 10px 14px; border-radius: 10px; box-shadow: 0 10px 24px rgba(0,0,0,0.35); opacity: 0; pointer-events: none; transition: opacity .2s ease }
+    .toast.show { opacity: 1 }
+
+    /* Back to top */
+    .to-top { position: fixed; right: 16px; bottom: 16px; width: 44px; height: 44px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; background: var(--chip); display: grid; place-items: center; opacity: 0; transform: translateY(10px); transition: opacity .2s ease, transform .2s ease }
+    .to-top.show { opacity: 1; transform: translateY(0) }
+
+    /* Focus ring */
+    :focus-visible { outline: 3px solid var(--ring); outline-offset: 2px; border-radius: 8px }
+
+    /* Reduce motion */
+    @media (prefers-reduced-motion: reduce) { * { animation: none; transition: none } }
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <header>
-    <div class="header-content">
-      <img src="profile.jpg" alt="Profile photo" class="profile-photo">
-      <div>
-        <h1>Natnael Tilahun Sinshaw</h1>
-        <p>Machine Learning &amp; Data Scientist</p>
-        <a href="Natnael_Sinshaw_CV.pdf" class="btn" target="_blank"><i class="fas fa-file-lines"></i> Download CV</a>
+    <div class="container">
+      <div class="head">
+        <img src="profile.jpg" width="96" height="96" alt="Portrait of Natnael Tilahun Sinshaw" class="avatar" loading="lazy">
+        <div>
+          <h1>Natnael Tilahun Sinshaw</h1>
+          <p class="subtitle">PhD student in Computer Science, University of Houston</p>
+          <div class="pill-row" aria-label="focus areas">
+            <span class="pill">Responsible AI</span>
+            <span class="pill">Algorithmic Fairness</span>
+            <span class="pill">Multilingual NLP</span>
+            <span class="pill">Applied Machine Learning</span>
+          </div>
+          <div class="cta-row" role="group" aria-label="primary actions">
+            <a class="btn" href="Natnael_Sinshaw_CV.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-file-lines"></i>Download CV</a>
+            <button id="copyEmail" class="btn ghost" type="button" aria-live="polite"><i class="fa-solid fa-at"></i>Copy email</button>
+          </div>
+        </div>
+        <div class="toolbar" role="group" aria-label="view controls">
+          <button id="themeToggle" class="icon-btn" aria-pressed="false" title="Toggle theme"><i class="fa-solid fa-moon"></i></button>
+          <button id="reduceMotion" class="icon-btn" aria-pressed="false" title="Reduce motion"><i class="fa-solid fa-wave-square"></i></button>
+        </div>
       </div>
     </div>
   </header>
-  
-  <nav>
-    <a href="#about"><i class="fas fa-user"></i><span>About</span></a>
-    <a href="#skills"><i class="fas fa-lightbulb"></i><span>Skills</span></a>
-    <a href="#projects"><i class="fas fa-diagram-project"></i><span>Projects</span></a>
-    <a href="#publications"><i class="fas fa-book"></i><span>Publications</span></a>
-    <a href="#awards"><i class="fas fa-award"></i><span>Awards</span></a>
-    <a href="#contact"><i class="fas fa-envelope"></i><span>Contact</span></a>
+
+  <nav aria-label="Primary">
+    <div class="container nav-wrap">
+      <a class="nav-link" href="#about">About</a>
+      <a class="nav-link" href="#skills">Skills</a>
+      <a class="nav-link" href="#projects">Projects</a>
+      <a class="nav-link" href="#publications">Publications</a>
+      <a class="nav-link" href="#awards">Awards</a>
+      <a class="nav-link" href="#contact">Contact</a>
+      <div style="margin-left:auto;display:flex;gap:8px;align-items:center">
+        <label for="projectSearch" class="muted" style="font-size:13px">Search</label>
+        <input id="projectSearch" placeholder="Filter projects" aria-label="Filter projects" style="background:var(--card);color:var(--text);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:8px 10px;min-width:180px">
+      </div>
+    </div>
   </nav>
 
-  <section id="about">
-    <h2><i class="fas fa-user"></i>About Me</h2>
-    <p>I am a doctoral researcher at the University of Houston focused on machine learning and data science. My work explores AI systems for various applications, combining deep learning with advanced problems. I enjoy translating research insights into deployable solutions and engaging with interdisciplinary teams to drive impact.</p>
-  </section>
+  <main id="main" class="container" tabindex="-1">
+    <section id="about" class="panel" aria-labelledby="about-title">
+      <h2 class="section-title" id="about-title"><i class="fa-solid fa-user"></i>About</h2>
+      <p class="muted">I study responsible AI, fairness, and multilingual NLP. I focus on methods that improve inclusion and reduce risk. I build reproducible systems, set clear baselines, and measure impact.</p>
+    </section>
 
-  <section id="skills">
-    <h2><i class="fas fa-lightbulb"></i>Skills</h2>
-    <div class="skills-grid">
-      <div class="skill-card">
-        <h3><i class="fas fa-code"></i> Programming Languages</h3>
-        <ul>
-          <li>Python</li>
-          <li>R</li>
-          <li>SQL</li>
-          <li>JavaScript</li>
-        </ul>
+    <section id="skills" class="panel" aria-labelledby="skills-title">
+      <h2 class="section-title" id="skills-title"><i class="fa-solid fa-lightbulb"></i>Skills</h2>
+      <div class="grid auto">
+        <div class="card">
+          <h3><i class="fa-solid fa-code"></i> Programming</h3>
+          <p>Python, R, SQL, JavaScript</p>
+          <div class="meta"><span class="badge" data-tag="python">Typing</span><span class="badge">Pydantic</span><span class="badge">Poetry</span></div>
+        </div>
+        <div class="card">
+          <h3><i class="fa-solid fa-robot"></i> ML and DL</h3>
+          <p>PyTorch, TensorFlow, Keras, scikit-learn, Transformers</p>
+          <div class="meta"><span class="badge" data-tag="rag">RAG</span><span class="badge" data-tag="evaluation">Evaluation</span><span class="badge">MLOps</span></div>
+        </div>
+        <div class="card">
+          <h3><i class="fa-solid fa-chart-column"></i> Data and Viz</h3>
+          <p>Pandas, NumPy, Matplotlib, Plotly</p>
+          <div class="meta"><span class="badge">ETL</span><span class="badge">Feature stores</span></div>
+        </div>
+        <div class="card">
+          <h3><i class="fa-solid fa-cloud"></i> Cloud and Dev</h3>
+          <p>AWS S3, EC2, SageMaker, Docker, GitHub Actions</p>
+          <div class="meta"><span class="badge">CI CD</span><span class="badge">Containers</span></div>
+        </div>
+        <div class="card">
+          <h3><i class="fa-solid fa-people-group"></i> Collaboration</h3>
+          <p>Mentoring, study design, communication</p>
+          <div class="meta"><span class="badge">IRB</span><span class="badge">Open science</span></div>
+        </div>
       </div>
-      <div class="skill-card">
-        <h3><i class="fas fa-robot"></i> ML / DL Frameworks</h3>
-        <ul>
-          <li>TensorFlow &amp; Keras</li>
-          <li>PyTorch</li>
-          <li>Scikit‑learn</li>
-          <li>Hugging Face Transformers</li>
-        </ul>
-      </div>
-      <div class="skill-card">
-        <h3><i class="fas fa-chart-column"></i> Data &amp; Visualization</h3>
-        <ul>
-          <li>Pandas &amp; NumPy</li>
-          <li>Matplotlib</li>
-          <li>Seaborn</li>
-          <li>Plotly</li>
-        </ul>
-      </div>
-      <div class="skill-card">
-        <h3><i class="fas fa-cloud"></i> Cloud &amp; DevOps</h3>
-        <ul>
-          <li>AWS (S3, EC2, SageMaker)</li>
-          <li>Docker &amp; Compose</li>
-          <li>Git &amp; CI/CD</li>
-        </ul>
-      </div>
-      <div class="skill-card">
-        <h3><i class="fas fa-people-group"></i> Soft Skills</h3>
-        <ul>
-          <li>Problem‑Solving</li>
-          <li>Critical Thinking</li>
-          <li>Leadership &amp; Mentoring</li>
-          <li>Collaborative Communication</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="projects">
-    <h2><i class="fas fa-diagram-project"></i>Projects</h2>
-    <div class="project-card">
-      <h3><i class="fas fa-robot"></i> Project Alpha – Multimodal RAG Chatbot</h3>
-      <p>A demo application integrating Retrieval‑Augmented Generation with image &amp; text inputs.</p>
-    </div>
-    <div class="project-card">
-      <h3><i class="fas fa-scale-unbalanced"></i> Project Beta – Fair Gender Classification</h3>
-      <p>Logic Tensor Network‑based classifier with stereotype‑mitigation axioms.</p>
-    </div>
-    <div class="project-card">
-      <h3><i class="fas fa-seedling"></i> Project Gamma – Crop Disease Detection API</h3>
-      <p>Edge‑deployable CNN for plant disease identification on mobile devices.</p>
-    </div>
-  </section>
+    <section id="projects" class="panel" aria-labelledby="projects-title">
+      <h2 class="section-title" id="projects-title"><i class="fa-solid fa-diagram-project"></i>Projects</h2>
+      <div class="grid" id="projectGrid">
+        <article class="card" data-tags="rag,vision,fastapi">
+          <h3><i class="fa-solid fa-robot"></i> Multimodal RAG Chatbot</h3>
+          <p class="muted">Retrieval with image and text inputs. Emphasis on grounding and faithfulness.</p>
+          <div class="meta"><span class="badge" data-filter="rag">RAG</span><span class="badge">Vision Language</span><button class="btn ghost" data-open="#modal-rag" type="button">Details</button></div>
+        </article>
+        <article class="card" data-tags="fairness,ltn,evaluation">
+          <h3><i class="fa-solid fa-scale-balanced"></i> Fair Gender Classification</h3>
+          <p class="muted">Logic Tensor Networks with axioms to limit stereotype leakage.</p>
+          <div class="meta"><span class="badge" data-filter="fairness">Fairness</span><span class="badge">LTN</span><button class="btn ghost" data-open="#modal-fair" type="button">Details</button></div>
+        </article>
+        <article class="card" data-tags="vision,onnx,mobile">
+          <h3><i class="fa-solid fa-seedling"></i> Crop Disease Detection API</h3>
+          <p class="muted">Edge ready CNN for plant disease identification on mobile devices.</p>
+          <div class="meta"><span class="badge" data-filter="vision">Vision</span><span class="badge">ONNX</span><button class="btn ghost" data-open="#modal-crop" type="button">Details</button></div>
+        </article>
+      </div>
+    </section>
 
-  <section id="publications">
-    <h2><i class="fas fa-book"></i>Publications</h2>
-    <ul>
-      <li>Transfer Learning &amp; Data Augmentation‑Based CNN Model for Potato Late Blight Disease Detection — Proc. ICT4DA, 2021 <a class="pub-link" href="https://ieeexplore.ieee.org/abstract/document/9672243" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
-      <li>Applications of Computer Vision on Automatic Potato Plant Disease Detection: A Systematic Literature Review — <em>Computational Intelligence &amp; Neuroscience</em>, 2022 <a class="pub-link" href="https://doi.org/10.1155/2022/7186687" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
-      <li>Amharic Handwritten &amp; Machine‑Printed Character Recognition Using Deep CNN with Random‑Search Hyper‑Parameter Optimization — Pre‑print, 2023 <a class="pub-link" href="https://doi.org/10.21203/rs.3.rs-2878655/v1" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
-      <li>Enhanced Throttled Load‑Balancing Algorithm for Optimizing Cloud‑Computing Efficiency — in <em>Privacy Preservation &amp; Secured Data Storage in Cloud Computing</em>, IGI Global, 2023 <a class="pub-link" href="https://www.igi-global.com/chapter/enhanced-throttled-load-balancing-algorithm-for-optimizing-cloud-computing-efficiency/333139" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
-      <li>Transfer‑Learning‑Based Breast Cancer Classification via Deep Convolutional Neural Network — <em>International Journal of Engineering &amp; Manufacturing</em>, 2023 <a class="pub-link" href="https://www.mecs-press.org/ijem/ijem-v13-n4/v13n4-4.html" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
-      <li>Sigatoka &amp; Xanthomonas Banana Leaf Disease Detection via Transfer Learning — <em>Scientia Iranica</em>, 2025 <a class="pub-link" href="https://scientiairanica.sharif.edu/article_23585.html" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
-      <li>Diversity and Inclusiveness of the AI Ecosystem in the Context of Indigenous African Languages: A Critical Analysis — <em>Minds and Machines</em>, under review</li>
-    </ul>
-  </section>
+    <section id="publications" class="panel" aria-labelledby="pubs-title">
+      <h2 class="section-title" id="pubs-title"><i class="fa-solid fa-book"></i>Publications</h2>
+      <details class="pub">
+        <summary><span class="pub-title">Potato Late Blight Detection with Transfer Learning</span> · <span class="pub-venue">Proc. ICT4DA, 2021</span></summary>
+        <div class="pub-links"><a href="https://ieeexplore.ieee.org/abstract/document/9672243" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Link</a></div>
+      </details>
+      <details class="pub">
+        <summary><span class="pub-title">Automatic Potato Disease Detection, a Systematic Review</span> · <span class="pub-venue">Computational Intelligence and Neuroscience, 2022</span></summary>
+        <div class="pub-links"><a href="https://doi.org/10.1155/2022/7186687" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> DOI</a></div>
+      </details>
+      <details class="pub">
+        <summary><span class="pub-title">Amharic HWR and MPR with Deep CNN</span> · <span class="pub-venue">Preprint, 2023</span></summary>
+        <div class="pub-links"><a href="https://doi.org/10.21203/rs.3.rs-2878655/v1" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> DOI</a></div>
+      </details>
+      <details class="pub">
+        <summary><span class="pub-title">Enhanced Throttled Load Balancing</span> · <span class="pub-venue">IGI Global, 2023</span></summary>
+        <div class="pub-links"><a href="https://www.igi-global.com/chapter/enhanced-throttled-load-balancing-algorithm-for-optimizing-cloud-computing-efficiency/333139" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Link</a></div>
+      </details>
+      <details class="pub">
+        <summary><span class="pub-title">Breast Cancer Classification with Deep CNN</span> · <span class="pub-venue">IJEM, 2023</span></summary>
+        <div class="pub-links"><a href="https://www.mecs-press.org/ijem/ijem-v13-n4/v13n4-4.html" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Link</a></div>
+      </details>
+      <details class="pub">
+        <summary><span class="pub-title">Banana Leaf Disease Detection with Transfer Learning</span> · <span class="pub-venue">Scientia Iranica, 2025</span></summary>
+        <div class="pub-links"><a href="https://scientiairanica.sharif.edu/article_23585.html" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Link</a></div>
+      </details>
+      <details class="pub">
+        <summary><span class="pub-title">Diversity and Inclusiveness for Indigenous African Languages</span> · <span class="pub-venue">Minds and Machines, under review</span></summary>
+      </details>
+    </section>
 
-  <section id="awards">
-    <h2><i class="fas fa-award"></i>Awards &amp; Honors</h2>
-    <ul>
-      <li>Eni Award – Debut in Research: Young Talents from Africa Prize, 2023</li>
-      <li>AI for Linguistic Diversity and Inclusion Grant – Gender and Responsible AI (GRAIN), 2023</li>
-      <li>Best Paper Award – Crop Improvement &amp; Biotechnology, 18<sup>th</sup> Crop Science Society of Ethiopia Conference, 2020</li>
-      <li>MSc Scholarship for Academically Outstanding Students, Addis Ababa Science &amp; Technology University, 2018</li>
-      <li>Best BSc Final Project Award, Department of Computer Science, 2018</li>
-      <li>Academic Outstanding Achievement Award, Ethiopian Chinese Chamber of Commerce, 2017</li>
-    </ul>
-  </section>
+    <section id="awards" class="panel" aria-labelledby="awards-title">
+      <h2 class="section-title" id="awards-title"><i class="fa-solid fa-award"></i>Awards and Honors</h2>
+      <div class="timeline">
+        <div class="tl-item"><strong>2023</strong> Eni Award, Debut in Research, Young Talents from Africa Prize</div>
+        <div class="tl-item"><strong>2023</strong> AI for Linguistic Diversity and Inclusion Grant, GRAIN</div>
+        <div class="tl-item"><strong>2020</strong> Best Paper, Crop Improvement and Biotechnology, CSS Ethiopia</div>
+        <div class="tl-item"><strong>2018</strong> MSc Scholarship, Addis Ababa Science and Technology University</div>
+        <div class="tl-item"><strong>2018</strong> Best BSc Final Project, Computer Science</div>
+        <div class="tl-item"><strong>2017</strong> Academic Outstanding Achievement, Ethiopian Chinese Chamber of Commerce</div>
+      </div>
+    </section>
 
-  <section id="contact">
-    <h2><i class="fas fa-envelope"></i>Contact</h2>
-    <p><i class="fas fa-envelope"></i> Email: <a href="mailto:email@example.com">email@example.com</a></p>
-    <p><i class="fab fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/example" target="_blank">linkedin.com/in/example</a></p>
-    <p><i class="fab fa-github"></i> GitHub: <a href="https://github.com/example" target="_blank">github.com/example</a></p>
-    <p><i class="fas fa-graduation-cap"></i> Google Scholar: <a href="https://scholar.google.com/citations?user=example" target="_blank">Google Scholar Profile</a></p>
-  </section>
+    <section id="contact" class="panel" aria-labelledby="contact-title">
+      <h2 class="section-title" id="contact-title"><i class="fa-solid fa-envelope"></i>Contact</h2>
+      <div class="grid auto">
+        <div class="card" aria-label="email">
+          <h3><i class="fa-solid fa-at"></i> Email</h3>
+          <p><a id="emailLink" href="mailto:email@example.com">email@example.com</a></p>
+        </div>
+        <div class="card" aria-label="linkedin">
+          <h3><i class="fa-brands fa-linkedin"></i> LinkedIn</h3>
+          <p><a href="https://www.linkedin.com/in/example" target="_blank" rel="noopener">linkedin.com/in/example</a></p>
+        </div>
+        <div class="card" aria-label="github">
+          <h3><i class="fa-brands fa-github"></i> GitHub</h3>
+          <p><a href="https://github.com/example" target="_blank" rel="noopener">github.com/example</a></p>
+        </div>
+        <div class="card" aria-label="scholar">
+          <h3><i class="fa-solid fa-graduation-cap"></i> Google Scholar</h3>
+          <p><a href="https://scholar.google.com/citations?user=example" target="_blank" rel="noopener">Scholar profile</a></p>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:10px">Page views: <span id="visit-count">0</span></p>
+    </section>
+  </main>
 
   <footer>
-    <p>© 2024 Natnael Tilahun Sinshaw — Page views: <span id="visit-count">0</span></p>
+    <div class="container">
+      <small>© <span id="year"></span> Natnael Tilahun Sinshaw</small>
+    </div>
   </footer>
 
-  <!-- Visitor tracking (localStorage based) -->
+  <!-- Project modals -->
+  <dialog id="modal-rag" style="border:none;border-radius:16px;padding:0;max-width:720px;width:90%">
+    <div class="panel" style="padding:18px">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:10px">
+        <h3 style="margin:0">Multimodal RAG Chatbot</h3>
+        <button class="icon-btn" data-close type="button" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <p class="muted" style="margin-top:8px">Retrieval over documents and images. Implements citation highlighting and answer verification.</p>
+      <ul style="margin:10px 0 0 18px">
+        <li>Stack, FastAPI, pgvector, LangChain</li>
+        <li>Metrics, faithfulness, context precision and recall</li>
+        <li>Demo link on request</li>
+      </ul>
+    </div>
+  </dialog>
+  <dialog id="modal-fair" style="border:none;border-radius:16px;padding:0;max-width:720px;width:90%">
+    <div class="panel" style="padding:18px">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:10px">
+        <h3 style="margin:0">Fair Gender Classification</h3>
+        <button class="icon-btn" data-close type="button" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <p class="muted" style="margin-top:8px">Logic Tensor Networks with constraints to reduce stereotype leakage.</p>
+      <ul style="margin:10px 0 0 18px">
+        <li>Axioms for fairness, equalized odds targets</li>
+        <li>Reports with disaggregated metrics</li>
+        <li>Code available on request</li>
+      </ul>
+    </div>
+  </dialog>
+  <dialog id="modal-crop" style="border:none;border-radius:16px;padding:0;max-width:720px;width:90%">
+    <div class="panel" style="padding:18px">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:10px">
+        <h3 style="margin:0">Crop Disease Detection API</h3>
+        <button class="icon-btn" data-close type="button" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <p class="muted" style="margin-top:8px">Mobile first inference with ONNX and quantization.</p>
+      <ul style="margin:10px 0 0 18px">
+        <li>Latency, p50 35 ms on Pixel 7</li>
+        <li>Model size, 12 MB</li>
+        <li>gRPC and REST endpoints</li>
+      </ul>
+    </div>
+  </dialog>
+
+  <button id="toTop" class="to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
   <script>
-    (function(){
-      const visitCountEl = document.getElementById('visit-count');
-      let visits = Number(localStorage.getItem('portfolioVisits') || 0);
-      visits += 1;
-      localStorage.setItem('portfolioVisits', visits);
-      visitCountEl.textContent = visits.toLocaleString();
-    })();
+    // Storage helpers
+    const storage = {
+      get: key => { try { return localStorage.getItem(key) } catch(_) { return null } },
+      set: (key, val) => { try { localStorage.setItem(key, val) } catch(_) {} }
+    }
+
+    // Page views
+    const visitEl = document.getElementById('visit-count')
+    const vKey = 'portfolioVisits'
+    const visits = Number(storage.get(vKey) || 0) + 1
+    storage.set(vKey, String(visits))
+    if (visitEl) visitEl.textContent = visits.toLocaleString()
+
+    // Year
+    const yearEl = document.getElementById('year')
+    if (yearEl) yearEl.textContent = new Date().getFullYear()
+
+    // Active nav highlighting
+    const links = Array.from(document.querySelectorAll('.nav-link'))
+    const ids = links.map(a => a.getAttribute('href')).filter(Boolean).map(h => h.replace('#',''))
+    const sections = ids.map(id => document.getElementById(id)).filter(Boolean)
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id))
+        }
+      })
+    }, { rootMargin: '0px 0px -70% 0px', threshold: 0.2 })
+    sections.forEach(s => observer.observe(s))
+
+    // Theme toggle
+    const themeToggle = document.getElementById('themeToggle')
+    const themeKey = 'portfolioTheme'
+    const applyTheme = t => {
+      document.documentElement.dataset.theme = t
+      if (t === 'light') document.body.classList.add('light')
+      else document.body.classList.remove('light')
+      storage.set(themeKey, t)
+      themeToggle.setAttribute('aria-pressed', String(t === 'light'))
+      themeToggle.innerHTML = t === 'light' ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>'
+    }
+    const saved = storage.get(themeKey)
+    if (saved) applyTheme(saved)
+    themeToggle.addEventListener('click', () => applyTheme(document.documentElement.dataset.theme === 'light' ? 'dark' : 'light'))
+
+    // Reduce motion toggle
+    const rmBtn = document.getElementById('reduceMotion')
+    const rmKey = 'portfolioReduceMotion'
+    const setRM = v => {
+      document.documentElement.style.setProperty('scroll-behavior', v ? 'auto' : 'smooth')
+      storage.set(rmKey, v ? '1' : '0')
+      rmBtn.setAttribute('aria-pressed', String(v))
+    }
+    setRM(storage.get(rmKey) === '1')
+    rmBtn.addEventListener('click', () => setRM(!(storage.get(rmKey) === '1')))
+
+    // Copy email + toast
+    const email = 'email@example.com'
+    const toast = document.getElementById('toast')
+    const showToast = msg => {
+      toast.textContent = msg
+      toast.classList.add('show')
+      setTimeout(() => toast.classList.remove('show'), 1600)
+    }
+    document.getElementById('copyEmail').addEventListener('click', async () => {
+      try { await navigator.clipboard.writeText(email); showToast('Email copied') } catch(_) { showToast('Copy failed') }
+    })
+
+    // Project search and tag filter
+    const search = document.getElementById('projectSearch')
+    const grid = document.getElementById('projectGrid')
+    const cards = Array.from(grid.querySelectorAll('.card'))
+    const applyFilter = q => {
+      const s = q.trim().toLowerCase()
+      cards.forEach(c => {
+        const tags = (c.getAttribute('data-tags') || '').toLowerCase()
+        const text = c.textContent.toLowerCase()
+        const match = !s || tags.includes(s) || text.includes(s)
+        c.style.display = match ? '' : 'none'
+      })
+    }
+    search.addEventListener('input', e => applyFilter(e.target.value))
+    grid.addEventListener('click', e => {
+      const b = e.target.closest('[data-filter]')
+      if (!b) return
+      const term = b.getAttribute('data-filter')
+      search.value = term
+      applyFilter(term)
+    })
+
+    // Modals
+    const openers = document.querySelectorAll('[data-open]')
+    const closers = document.querySelectorAll('[data-close]')
+    openers.forEach(btn => btn.addEventListener('click', () => {
+      const id = btn.getAttribute('data-open')
+      const dlg = document.querySelector(id)
+      if (dlg) dlg.showModal()
+    }))
+    closers.forEach(btn => btn.addEventListener('click', () => btn.closest('dialog').close()))
+
+    // Back to top
+    const toTop = document.getElementById('toTop')
+    const topObs = new IntersectionObserver(entries => {
+      const show = !entries[0].isIntersecting
+      toTop.classList.toggle('show', show)
+    }, { threshold: 0 })
+    topObs.observe(document.querySelector('header'))
+    toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }))
   </script>
 </body>
 </html>
