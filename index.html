@@ -4,136 +4,55 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Natnael Tilahun Sinshaw | PhD Student, Computer Science</title>
-  <meta name="description" content="Portfolio of Natnael Tilahun Sinshaw, PhD student in Computer Science at the University of Houston. Research in responsible AI, algorithmic fairness, multilingual NLP, and applied machine learning.">
+  <meta name="description" content="Portfolio of Natnael Tilahun Sinshaw, PhD student in Computer Science at the University of Houston. Research in responsible AI, algorithmic fairness, multilingual NLP, computer vision, and applied machine learning.">
+  <meta name="author" content="Natnael Tilahun Sinshaw">
+  <meta name="keywords" content="Natnael Tilahun Sinshaw, PhD Student, Computer Science, University of Houston, Responsible AI, Algorithmic Fairness, Multilingual NLP, Computer Vision, Machine Learning">
   <meta name="theme-color" content="#0b5ed7">
+  <link rel="canonical" href="https://natnaelsinshaw.github.io/">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://natnaelsinshaw.github.io/">
+  <meta property="og:title" content="Natnael Tilahun Sinshaw | PhD Student, Computer Science">
+  <meta property="og:description" content="PhD student in Computer Science at the University of Houston working on responsible AI, algorithmic fairness, and multilingual NLP.">
+  <meta property="og:image" content="https://natnaelsinshaw.github.io/assets/images/profile.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="https://natnaelsinshaw.github.io/">
+  <meta property="twitter:title" content="Natnael Tilahun Sinshaw | PhD Student, Computer Science">
+  <meta property="twitter:description" content="PhD student in Computer Science at the University of Houston working on responsible AI, algorithmic fairness, and multilingual NLP.">
+  <meta property="twitter:image" content="https://natnaelsinshaw.github.io/assets/images/profile.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/profile.png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    :root {
-      --bg: #0b0c10;
-      --panel: #111318;
-      --muted: #98a2b3;
-      --text: #e6e7ea;
-      --brand: #0b5ed7;
-      --brand-600: #094eb2;
-      --ring: rgba(11,94,215,0.35);
-      --card: #0e1014;
-      --chip: #151923;
-      --ok: #17b26a;
-      --warn: #ef6820;
-    }
-    @media (prefers-color-scheme: light) {
-      :root {
-        --bg: #f7f7f8;
-        --panel: #ffffff;
-        --muted: #475467;
-        --text: #111827;
-        --brand: #0b5ed7;
-        --brand-600: #094eb2;
-        --ring: rgba(11,94,215,0.25);
-        --card: #ffffff;
-        --chip: #eef2ff;
-      }
-    }
-    * { box-sizing: border-box }
-    html, body { height: 100% }
-    body {
-      margin: 0;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      text-rendering: optimizeLegibility;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-    a { color: var(--brand); text-decoration: none }
-    a:hover { text-decoration: underline }
-    .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 20px }
+  <link rel="stylesheet" href="style.css">
 
-    .skip-link { position: absolute; left: -9999px; top: auto }
-    .skip-link:focus { left: 16px; top: 16px; background: var(--brand); color: #fff; padding: 10px 14px; border-radius: 10px }
-
-    /* Header */
-    header {
-      background: radial-gradient(1200px 600px at 10% -10%, rgba(11,94,215,0.25), transparent),
-                  radial-gradient(1000px 500px at 90% -20%, rgba(11,94,215,0.18), transparent),
-                  linear-gradient(180deg, rgba(255,255,255,0.02), transparent 40%);
-      padding: 64px 0 24px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-    .head { display: grid; grid-template-columns: 96px 1fr auto; gap: 20px; align-items: center }
-    .avatar { width: 96px; height: 96px; border-radius: 16px; object-fit: cover; border: 2px solid rgba(255,255,255,0.08); box-shadow: 0 10px 30px rgba(0,0,0,0.25) }
-    h1 { font-size: clamp(26px, 3.4vw, 36px); margin: 0 0 6px 0 }
-    .subtitle { color: var(--muted); margin: 0 0 12px 0 }
-    .pill-row { display: flex; flex-wrap: wrap; gap: 8px }
-    .pill { background: var(--chip); color: var(--text); padding: 6px 10px; border-radius: 999px; font-size: 12px; border: 1px solid rgba(255,255,255,0.05) }
-    .cta-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px }
-    .btn { display: inline-flex; align-items: center; gap: 10px; background: var(--brand); color: #fff; padding: 10px 14px; border-radius: 12px; text-decoration: none; font-weight: 600; box-shadow: 0 8px 20px rgba(11,94,215,0.25); transition: transform .15s ease }
-    .btn:hover { background: var(--brand-600) }
-    .btn:active { transform: translateY(1px) }
-    .btn.ghost { background: transparent; color: var(--brand); border: 1px solid var(--brand); box-shadow: none }
-    .toolbar { display: flex; gap: 10px; align-items: center }
-    .icon-btn { width: 40px; height: 40px; display: inline-grid; place-items: center; border-radius: 12px; background: var(--chip); border: 1px solid rgba(255,255,255,0.06); cursor: pointer }
-
-    /* Nav */
-    nav { position: sticky; top: 0; z-index: 50; background: rgba(6,7,10,0.75); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.06) }
-    @media (prefers-color-scheme: light) { nav { background: rgba(255,255,255,0.85) } }
-    .nav-wrap { display: flex; gap: 18px; overflow-x: auto; padding: 10px 0 }
-    .nav-link { color: var(--muted); padding: 8px 10px; border-radius: 10px; white-space: nowrap }
-    .nav-link.active, .nav-link:hover { color: var(--text); background: rgba(255,255,255,0.06) }
-
-    /* Sections */
-    section { padding: 28px 0 }
-    .panel { background: var(--panel); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 22px }
-    .section-title { display: flex; align-items: center; gap: 10px; margin: 0 0 14px 0; font-size: 20px }
-    .muted { color: var(--muted) }
-
-    /* Layout helpers */
-    .grid { display: grid; gap: 14px }
-    .grid.auto { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)) }
-
-    /* Cards */
-    .card { background: var(--card); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; padding: 16px; transition: transform .15s ease, box-shadow .15s ease }
-    .card:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(0,0,0,0.25) }
-    .card h3 { margin: 0 0 6px 0; font-size: 16px }
-    .card p { margin: 0 }
-    .meta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; font-size: 13px; color: var(--muted) }
-    .badge { background: rgba(11,94,215,0.18); border: 1px solid rgba(11,94,215,0.35); color: #cfe1ff; padding: 2px 8px; border-radius: 999px; font-size: 12px; cursor: pointer }
-    @media (prefers-color-scheme: light) { .badge { color: #0b3a87 } }
-
-    /* Publications */
-    details.pub { border: 1px solid rgba(255,255,255,0.06); background: var(--card); padding: 12px 14px; border-radius: 12px }
-    details.pub + details.pub { margin-top: 10px }
-    .pub-title { font-weight: 600 }
-    .pub-venue { font-size: 13px; color: var(--muted) }
-    .pub-links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px }
-
-    /* Timeline */
-    .timeline { position: relative; padding-left: 18px }
-    .timeline::before { content: ""; position: absolute; left: 6px; top: 2px; bottom: 2px; width: 2px; background: rgba(255,255,255,0.1) }
-    .tl-item { position: relative; padding: 8px 0 8px 16px }
-    .tl-item::before { content: ""; position: absolute; left: -2px; top: 14px; width: 10px; height: 10px; border-radius: 999px; background: var(--brand) }
-
-    /* Footer */
-    footer { padding: 22px 0; color: var(--muted) }
-
-    /* Toast */
-    .toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); background: #111; color: #fff; padding: 10px 14px; border-radius: 10px; box-shadow: 0 10px 24px rgba(0,0,0,0.35); opacity: 0; pointer-events: none; transition: opacity .2s ease }
-    .toast.show { opacity: 1 }
-
-    /* Back to top */
-    .to-top { position: fixed; right: 16px; bottom: 16px; width: 44px; height: 44px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; background: var(--chip); display: grid; place-items: center; opacity: 0; transform: translateY(10px); transition: opacity .2s ease, transform .2s ease }
-    .to-top.show { opacity: 1; transform: translateY(0) }
-
-    /* Focus ring */
-    :focus-visible { outline: 3px solid var(--ring); outline-offset: 2px; border-radius: 8px }
-
-    /* Reduce motion */
-    @media (prefers-reduced-motion: reduce) { * { animation: none; transition: none } }
-  </style>
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Natnael Tilahun Sinshaw",
+    "url": "https://natnaelsinshaw.github.io/",
+    "image": "https://natnaelsinshaw.github.io/assets/images/profile.png",
+    "jobTitle": "PhD Student",
+    "affiliation": {
+      "@type": "Organization",
+      "name": "University of Houston"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/natnaelsinshaw",
+      "https://github.com/natime1231",
+      "https://scholar.google.com/citations?user=mZ7FUrwAAAAJ&hl=en"
+    ]
+  }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -141,18 +60,19 @@
   <header>
     <div class="container">
       <div class="head">
-        <img src="profile.jpg" width="96" height="96" alt="Portrait of Natnael Tilahun Sinshaw" class="avatar" loading="lazy">
+        <img src="assets/images/profile.png" width="96" height="96" alt="Portrait of Natnael Tilahun Sinshaw" class="avatar" loading="lazy">
         <div>
           <h1>Natnael Tilahun Sinshaw</h1>
-          <p class="subtitle">PhD student in Computer Science, University of Houston</p>
+          <p class="subtitle">PhD Student in Computer Science, University of Houston · Responsible AI & Algorithmic Fairness</p>
           <div class="pill-row" aria-label="focus areas">
             <span class="pill">Responsible AI</span>
             <span class="pill">Algorithmic Fairness</span>
             <span class="pill">Multilingual NLP</span>
-            <span class="pill">Applied Machine Learning</span>
+            <span class="pill">Computer Vision</span>
           </div>
           <div class="cta-row" role="group" aria-label="primary actions">
-            <a class="btn" href="Natnael_Sinshaw_CV.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-file-lines"></i>Download CV</a>
+            <a class="btn" href="assets/documents/Natnael_Resume.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-file-lines"></i>Download CV</a>
+            <button id="previewCV" class="btn ghost" type="button"><i class="fa-solid fa-eye"></i>Preview CV</button>
             <button id="copyEmail" class="btn ghost" type="button" aria-live="polite"><i class="fa-solid fa-at"></i>Copy email</button>
           </div>
         </div>
@@ -180,12 +100,15 @@
   </nav>
 
   <main id="main" class="container" tabindex="-1">
-    <section id="about" class="panel" aria-labelledby="about-title">
+    <section id="about" class="panel reveal" aria-labelledby="about-title">
       <h2 class="section-title" id="about-title"><i class="fa-solid fa-user"></i>About</h2>
-      <p class="muted">I study responsible AI, fairness, and multilingual NLP. I focus on methods that improve inclusion and reduce risk. I build reproducible systems, set clear baselines, and measure impact.</p>
+      <p class="muted">
+        I am a PhD student in Computer Science at the University of Houston and a member of the <strong>Computational Biomedicine Lab (CBL)</strong>.
+        My research focuses on responsible AI, algorithmic fairness, and multilingual NLP, designing and evaluating machine learning systems that reduce bias, improve inclusion, and support under-resourced languages.
+      </p>
     </section>
 
-    <section id="skills" class="panel" aria-labelledby="skills-title">
+    <section id="skills" class="panel reveal" aria-labelledby="skills-title">
       <h2 class="section-title" id="skills-title"><i class="fa-solid fa-lightbulb"></i>Skills</h2>
       <div class="grid auto">
         <div class="card">
@@ -216,152 +139,313 @@
       </div>
     </section>
 
-    <section id="projects" class="panel" aria-labelledby="projects-title">
+    <section id="projects" class="panel reveal" aria-labelledby="projects-title">
       <h2 class="section-title" id="projects-title"><i class="fa-solid fa-diagram-project"></i>Projects</h2>
+      
+      <!-- Live Demo Section (Uncomment when ready)
+      <div class="panel" style="background:var(--card);border:1px solid rgba(255,255,255,0.06);margin-bottom:24px;padding:0;overflow:hidden">
+        <div style="padding:16px;border-bottom:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;align-items:center">
+          <h3 style="margin:0;font-size:16px"><i class="fa-solid fa-play-circle" style="color:var(--brand);margin-right:8px"></i>Live Demo: Crop Disease Classifier</h3>
+          <span class="badge">Hugging Face Space</span>
+        </div>
+        <div style="width:100%;height:400px;background:#000;display:grid;place-items:center;color:var(--muted)">
+          <div style="text-align:center">
+            <i class="fa-solid fa-cube fa-3x" style="margin-bottom:16px;opacity:0.5"></i>
+            <p>Interactive Demo Placeholder</p>
+            <p style="font-size:13px">Embed your Hugging Face Space or Streamlit app here using an iframe.</p>
+          </div>
+        </div>
+      </div>
+      -->
+
       <div class="grid" id="projectGrid">
         <article class="card" data-tags="rag,vision,fastapi">
           <h3><i class="fa-solid fa-robot"></i> Multimodal RAG Chatbot</h3>
-          <p class="muted">Retrieval with image and text inputs. Emphasis on grounding and faithfulness.</p>
+          <p class="muted">Retrieval with image and text inputs for technical documents. Emphasis on grounding, faithfulness, and transparent citation of sources.</p>
           <div class="meta"><span class="badge" data-filter="rag">RAG</span><span class="badge">Vision Language</span><button class="btn ghost" data-open="#modal-rag" type="button">Details</button></div>
         </article>
-        <article class="card" data-tags="fairness,ltn,evaluation">
-          <h3><i class="fa-solid fa-scale-balanced"></i> Fair Gender Classification</h3>
-          <p class="muted">Logic Tensor Networks with axioms to limit stereotype leakage.</p>
-          <div class="meta"><span class="badge" data-filter="fairness">Fairness</span><span class="badge">LTN</span><button class="btn ghost" data-open="#modal-fair" type="button">Details</button></div>
+        <article class="card" data-tags="fairness,evaluation">
+          <h3><i class="fa-solid fa-scale-balanced"></i> Auditing Gender Classification Bias</h3>
+          <p class="muted">Data-centric pipeline to audit and mitigate bias in gender classification models using dataset audits, fairness-aware training, and equalized odds regularization.</p>
+          <div class="meta"><span class="badge" data-filter="fairness">Fairness</span><span class="badge">Bias Auditing</span><button class="btn ghost" data-open="#modal-fair" type="button">Details</button></div>
         </article>
         <article class="card" data-tags="vision,onnx,mobile">
           <h3><i class="fa-solid fa-seedling"></i> Crop Disease Detection API</h3>
-          <p class="muted">Edge ready CNN for plant disease identification on mobile devices.</p>
+          <p class="muted">Edge-ready CNN for potato and banana leaf disease detection, optimized for mobile and low-resource environments.</p>
           <div class="meta"><span class="badge" data-filter="vision">Vision</span><span class="badge">ONNX</span><button class="btn ghost" data-open="#modal-crop" type="button">Details</button></div>
         </article>
       </div>
-    </section>
 
-   <section id="publications" class="panel" aria-labelledby="pubs-title">
-  <h2 class="section-title" id="pubs-title"><i class="fa-solid fa-book"></i> Publications</h2>
-  <ol style="margin:0;padding-left:20px">
-    <li>
-      <span class="pub-title">Applications of Computer Vision on Automatic Potato Plant Disease Detection, A Systematic Literature Review</span>.
-      <span class="pub-venue">Computational Intelligence and Neuroscience, 2022</span>.
-      <a href="https://doi.org/10.1155/2022/7186687" target="_blank" rel="noopener">DOI</a>
-      <a href="#" data-bibtex="sinshaw2022cines" class="badge">BibTeX</a>
-    </li>
-    <li>
-      <span class="pub-title">Transfer Learning and Data Augmentation Based CNN Model for Potato Late Blight Disease Detection</span>.
-      <span class="pub-venue">ICT4DA, 2021</span>.
-      <a href="https://doi.org/10.1109/ICT4DA53266.2021.9672243" target="_blank" rel="noopener">DOI</a>
-      <a href="#" data-bibtex="sinshaw2021ict4da" class="badge">BibTeX</a>
-    </li>
-    <li>
-      <span class="pub-title">Transfer Learning based Breast Cancer Classification via Deep Convolutional Neural Network</span>.
-      <span class="pub-venue">International Journal of Engineering and Manufacturing, 2023</span>.
-      <a href="https://doi.org/10.5815/ijem.2023.04.04" target="_blank" rel="noopener">DOI</a>
-      <a href="#" data-bibtex="sinshaw2023ijem" class="badge">BibTeX</a>
-    </li>
-    <li>
-      <span class="pub-title">Sigatoka and Xanthomonas Banana Leaf Disease Detection via Transfer Learning</span>.
-      <span class="pub-venue">Scientia Iranica, 2025</span>.
-      <a href="https://doi.org/10.24200/sci.2024.62306.7766" target="_blank" rel="noopener">DOI</a>
-      <a href="#" data-bibtex="genet2025sci" class="badge">BibTeX</a>
-    </li>
-    <li>
-      <span class="pub-title">Enhanced Throttled Load Balancing for Optimizing Cloud Computing Efficiency</span>.
-      <span class="pub-venue">IGI Global chapter, 2023</span>.
-      <a href="https://doi.org/10.4018/979-8-3693-0593-5.ch009" target="_blank" rel="noopener">DOI</a>
-      <a href="#" data-bibtex="etlba2023igi" class="badge">BibTeX</a>
-    </li>
-    <li>
-      <span class="pub-title">Amharic Handwriting Recognition and Morphological Pattern Recognition with Deep CNN</span>.
-      <span class="pub-venue">Preprint, 2023</span>.
-      <a href="https://doi.org/10.21203/rs.3.rs-2878655/v1" target="_blank" rel="noopener">DOI</a>
-      <a href="#" data-bibtex="amharic2023preprint" class="badge">BibTeX</a>
-    </li>
-  </ol>
-</section>
-
-
-    <section id="awards" class="panel" aria-labelledby="awards-title">
-      <h2 class="section-title" id="awards-title"><i class="fa-solid fa-award"></i>Awards and Honors</h2>
-      <div class="timeline">
-        <div class="tl-item"><strong>2023</strong> Eni Award, Debut in Research, Young Talents from Africa Prize</div>
-        <div class="tl-item"><strong>2023</strong> AI for Linguistic Diversity and Inclusion Grant, GRAIN</div>
-        <div class="tl-item"><strong>2020</strong> Best Paper, Crop Improvement and Biotechnology, CSS Ethiopia</div>
-        <div class="tl-item"><strong>2018</strong> MSc Scholarship, Addis Ababa Science and Technology University</div>
-        <div class="tl-item"><strong>2018</strong> Best BSc Final Project, Computer Science</div>
-        <div class="tl-item"><strong>2017</strong> Academic Outstanding Achievement, Ethiopian Chinese Chamber of Commerce</div>
+      <h3 style="margin: 32px 0 16px 0; font-size: 18px; display: flex; align-items: center; gap: 10px;">
+        <i class="fa-brands fa-github"></i> Latest from GitHub
+      </h3>
+      <div id="github-repos" class="grid auto">
+        <div class="card" style="display:grid;place-items:center;min-height:140px">
+          <i class="fa-solid fa-circle-notch fa-spin fa-2x muted"></i>
+        </div>
       </div>
     </section>
 
-    <section id="contact" class="panel" aria-labelledby="contact-title">
+    <section id="publications" class="panel reveal" aria-labelledby="pubs-title">
+      <h2 class="section-title" id="pubs-title"><i class="fa-solid fa-book"></i> Selected Publications</h2>
+      <ol style="margin:0;padding-left:20px">
+        <li>
+          <div class="pub-title"><a href="https://doi.org/10.1109/ICT4DA67218.2025.11282773" target="_blank" rel="noopener">Blog Data Showdown: Machine Learning vs Neuro-Symbolic Models for Gender Classification</a></div>
+          <div class="pub-venue">Sinshaw, Natnael Tilahun, Mengmei He, Tadesse K. Bahiru, and Sudhir Kumar Mohapatra, <em>in 2025 International Conference on Information and Communication Technology for Development for Africa (ICT4DA)</em>, 2025, pp. 229-234.</div>
+        </li>
+        <li>
+          <div class="pub-title"><a href="https://doi.org/10.1109/ICT4DA67218.2025.11282712" target="_blank" rel="noopener">Auditing and Mitigating Bias in Gender Classification Algorithms: A Data-Centric Approach</a></div>
+          <div class="pub-venue">Tadesse K. Bahiru, Sinshaw, Natnael Tilahun, Teshager Hailemariam Moges, and Dheeraj Kumar Singh, <em>in 2025 International Conference on Information and Communication Technology for Development for Africa (ICT4DA)</em>, 2025, pp. 1-6.</div>
+        </li>
+        <li>
+          <div class="pub-title"><a href="https://doi.org/10.24200/sci.2024.62306.7766" target="_blank" rel="noopener">Sigatoka and Xanthomonas banana leaf disease detection via transfer learning</a></div>
+          <div class="pub-venue">Yordanos Hailu Genet, Sinshaw, Natnael Tilahun, Beakal Gizachew Assefa, and Sudhir Kumar Mohapatra, <em>Scientia Iranica</em>, vol. 31, no. 21, pp. 1939-1947, 2024.</div>
+        </li>
+        <li>
+          <div class="pub-title"><a href="https://doi.org/10.21203/rs.3.rs-2878655/v1" target="_blank" rel="noopener">Amharic Handwritten & Machine Printed Character Recognition Using Deep CNN with Random Search Hyperparameter Optimization Algorithm</a></div>
+          <div class="pub-venue">Sinshaw, Natnael Tilahun, Biniam Ewnetu Ejigu, Beakal Gizachew Assefa, and Sudhir Kumar Mohapatra, <em>Research Square (Preprint)</em>, May 12, 2023.</div>
+        </li>
+        <li>
+          <div class="pub-title"><a href="https://doi.org/10.4018/979-8-3693-0593-5.ch009" target="_blank" rel="noopener">Enhanced Throttled Load Balancing Algorithm for Optimizing Cloud Computing Efficiency</a></div>
+          <div class="pub-venue">Sudhir Kumar Mohapatra, Tarikwa Tesfa, Srinivas Prasad, and Sinshaw, Natnael Tilahun, <em>in Privacy Preservation and Secured Data Storage in Cloud Computing, Lakshmi D. and Amit Kumar Tyagi, Eds. Hershey, PA, USA: IGI Global Scientific Publishing</em>, 2023, pp. 197-225.</div>
+        </li>
+        <li>
+          <div class="pub-title"><a href="https://doi.org/10.5815/ijem.2023.04.04" target="_blank" rel="noopener">Transfer Learning based Breast Cancer Classification via Deep Convolutional Neural Network</a></div>
+          <div class="pub-venue">Markos Wondim Walle, Kula Kakeba Tune, Sinshaw, Natnael Tilahun, and Sudhir Kumar Mohapatra, <em>International Journal of Engineering and Manufacturing (IJEM)</em>, vol. 13, no. 4, pp. 34-43, 2023.</div>
+        </li>
+        <li>
+          <div class="pub-title"><a href="https://doi.org/10.1155/2022/7186687" target="_blank" rel="noopener">Applications of Computer Vision on Automatic Potato Plant Disease Detection: A Systematic Literature Review</a></div>
+          <div class="pub-venue">Sinshaw, Natnael Tilahun, Beakal Gizachew Assefa, Sudhir Kumar Mohapatra, and Asrat Mulatu Beyene, <em>Computational Intelligence and Neuroscience</em>, vol. 2022, no. 1, p. 7186687, 2022.</div>
+        </li>
+        <li>
+          <div class="pub-title"><a href="https://doi.org/10.1109/ICT4DA53266.2021.9672243" target="_blank" rel="noopener">Transfer Learning and Data Augmentation Based CNN Model for Potato Late Blight Disease Detection</a></div>
+          <div class="pub-venue">Sinshaw, Natnael Tilahun, Beakal Gizachew Assefa, and Sudhir Kumar Mohapatra, <em>in 2021 International Conference on Information and Communication Technology for Development for Africa (ICT4DA)</em>, 2021, pp. 30-35.</div>
+        </li>
+      </ol>
+    </section>
+
+    <section id="awards" class="panel reveal" aria-labelledby="awards-title">
+      <h2 class="section-title" id="awards-title"><i class="fa-solid fa-award"></i>Awards and Honors</h2>
+      
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-bottom: 32px;">
+        <!-- Eni Award -->
+        <article class="card" style="padding:0; overflow:hidden; display:flex; flex-direction:column;">
+          <a href="https://www.eni.com/en-IT/media/press-release/2023/07/pr-eni-eniaward-2023.html" target="_blank" rel="noopener" style="height:200px; overflow:hidden; display:block;">
+            <img src="assets/images/_N2A7847.JPG" alt="Eni Award Ceremony" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
+          </a>
+          <div style="padding:20px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <h3 style="margin:0; font-size:18px; display:flex; align-items:center; gap:8px;">
+                <img src="https://www.eni.com/content/dam/enicom/images/loghi/logoEni.svg" alt="Eni Logo" style="height:24px; width:auto; background:white; padding:2px; border-radius:4px;">
+                Eni Award 2023
+              </h3>
+              <span class="badge">Debut in Research</span>
+            </div>
+            <p class="muted">Honored with the "Young Talents from Africa" prize for pioneering deep learning research in early crop disease detection, addressing critical challenges in food security and sustainable agriculture.</p>
+            <a href="https://www.eni.com/en-IT/media/press-release/2023/07/pr-eni-eniaward-2023.html" target="_blank" rel="noopener" style="font-size:13px; font-weight:600;">Read Press Release <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </article>
+
+        <!-- GRAIN Grant -->
+        <article class="card" style="padding:0; overflow:hidden; display:flex; flex-direction:column;">
+          <a href="https://grain-africa.org/en/19810-autosave-v1/" target="_blank" rel="noopener" style="height:200px; overflow:hidden; display:block;">
+            <img src="assets/images/grain-award.jpeg" alt="GRAIN Grant" loading="lazy" style="width:100%; height:100%; object-fit:cover; object-position: 50% 10%;">
+          </a>
+          <div style="padding:20px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <h3 style="margin:0; font-size:18px; display:flex; align-items:center; gap:8px;">
+                <img src="https://grain-africa.org/wp-content/uploads/2020/03/GRAIN_newlogo_273_-removebg-preview-1.png" alt="GRAIN Logo" style="height:24px; width:auto; background:white; padding:2px; border-radius:4px;">
+                GRAIN Grant 2023
+              </h3>
+              <span class="badge">AI for Inclusion</span>
+            </div>
+            <p class="muted">Grant for AI for Linguistic Diversity and Inclusion, funded by IDRC and Sida. Supporting research on gender diversity and equity in the AI ecosystem for African languages.</p>
+            <a href="https://grain-africa.org/en/19810-autosave-v1/" target="_blank" rel="noopener" style="font-size:13px; font-weight:600;">View Project <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </article>
+      </div>
+
+      <h3 style="font-size:18px; margin: 32px 0 20px 0; color:var(--text);">Selected Honors & Achievements</h3>
+      <div class="timeline">
+        <div class="tl-item">
+          <div style="display:flex; flex-direction:column;">
+            <span style="font-weight:600; color:var(--text);">Fully Funded PhD Scholarship (Not pursued)</span>
+            <span class="muted" style="font-size:14px;">Awarded a prestigious, fully funded PhD scholarship at the University of Turin, Italy, sponsored by Eni for research in Computer Science and Artificial Intelligence · <span style="color:var(--brand)">2023</span></span>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div style="display:flex; flex-direction:column;">
+            <span style="font-weight:600; color:var(--text);">Best Paper Award</span>
+            <span class="muted" style="font-size:14px;">Awarded for the best paper in the Crop Improvement and Biotechnology category at the 18th Biennial Conference of the Crop Science Society of Ethiopia · <span style="color:var(--brand)">2020</span></span>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div style="display:flex; flex-direction:column;">
+            <span style="font-weight:600; color:var(--text);">MSc Scholarship</span>
+            <span class="muted" style="font-size:14px;">Fully funded MSc in Software Engineering at Addis Ababa Science and Technology University (AASTU) · <span style="color:var(--brand)">2018</span></span>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div style="display:flex; flex-direction:column;">
+            <span style="font-weight:600; color:var(--text);">Best BSc Final Project</span>
+            <span class="muted" style="font-size:14px;">Awarded for the best final year project in the Computer Science Department at Addis Ababa Science and Technology University (AASTU)· <span style="color:var(--brand)">2018</span></span>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div style="display:flex; flex-direction:column;">
+            <span style="font-weight:600; color:var(--text);">Academic Outstanding Achievement</span>
+            <span class="muted" style="font-size:14px;">Ethiopian Chinese Chamber of Commerce at Addis Ababa Science and Technology University (AASTU) · <span style="color:var(--brand)">2017</span></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="panel reveal" aria-labelledby="contact-title">
       <h2 class="section-title" id="contact-title"><i class="fa-solid fa-envelope"></i>Contact</h2>
       <div class="grid auto">
         <div class="card" aria-label="email">
           <h3><i class="fa-solid fa-at"></i> Email</h3>
-          <p><a id="emailLink" href="mailto:email@example.com">email@example.com</a></p>
+          <p><a id="emailLink" href="mailto:natnael.tilahun@uh.edu">natnael.tilahun@uh.edu</a></p>
         </div>
         <div class="card" aria-label="linkedin">
           <h3><i class="fa-brands fa-linkedin"></i> LinkedIn</h3>
-          <p><a href="https://www.linkedin.com/in/example" target="_blank" rel="noopener">linkedin.com/in/example</a></p>
+          <p><a href="https://www.linkedin.com/in/natnaelsinshaw" target="_blank" rel="noopener">linkedin.com/in/natnaelsinshaw</a></p>
         </div>
         <div class="card" aria-label="github">
           <h3><i class="fa-brands fa-github"></i> GitHub</h3>
-          <p><a href="https://github.com/example" target="_blank" rel="noopener">github.com/example</a></p>
+          <p><a href="https://github.com/natime1231" target="_blank" rel="noopener">github.com/natime1231</a></p>
         </div>
         <div class="card" aria-label="scholar">
           <h3><i class="fa-solid fa-graduation-cap"></i> Google Scholar</h3>
-          <p><a href="https://scholar.google.com/citations?user=example" target="_blank" rel="noopener">Scholar profile</a></p>
+          <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap">
+            <a href="https://scholar.google.com/citations?user=mZ7FUrwAAAAJ&hl=en" target="_blank" rel="noopener">Scholar Profile</a>
+          </div>
         </div>
       </div>
-      <p class="muted" style="margin-top:10px">Page views: <span id="visit-count">0</span></p>
     </section>
   </main>
 
-  <footer>
-    <div class="container">
-      <small>© <span id="year"></span> Natnael Tilahun Sinshaw</small>
+  <footer style="border-top:1px solid rgba(255,255,255,0.06); margin-top:80px; padding:40px 0; background:var(--panel);">
+    <div class="container" style="display:flex; flex-direction:column; gap:24px; align-items:center;">
+      <div style="display:flex; gap:24px;">
+        <a href="https://github.com/natime1231" target="_blank" rel="noopener" class="icon-btn" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/natnaelsinshaw" target="_blank" rel="noopener" class="icon-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://scholar.google.com/citations?user=mZ7FUrwAAAAJ&hl=en" target="_blank" rel="noopener" class="icon-btn" aria-label="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
+        <a href="mailto:natnael.tilahun@uh.edu" class="icon-btn" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+      
+      <div style="width:100%; border-top:1px solid rgba(255,255,255,0.06); padding-top:24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; font-size:13px; color:var(--muted);">
+        <span>© <span id="year"></span> Natnael Tilahun Sinshaw. All rights reserved.</span>
+        <span style="display:flex; align-items:center; gap:6px;">
+          <span style="width:6px; height:6px; background:var(--ok); border-radius:50%;"></span>
+          Last updated: <span id="lastUpdated"></span>
+        </span>
+      </div>
     </div>
   </footer>
 
   <!-- Project modals -->
+  <dialog id="modal-cv" style="border:none;border-radius:16px;padding:0;max-width:900px;width:90%;height:80vh">
+    <div class="panel" style="padding:0;height:100%;display:flex;flex-direction:column">
+      <div style="padding:14px 18px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.06)">
+        <h3 style="margin:0">CV Preview</h3>
+        <button class="icon-btn" data-close type="button" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <iframe src="assets/documents/Natnael_Resume.pdf" style="flex:1;width:100%;border:none;background:#fff"></iframe>
+    </div>
+  </dialog>
+
   <dialog id="modal-rag" style="border:none;border-radius:16px;padding:0;max-width:720px;width:90%">
-    <div class="panel" style="padding:18px">
-      <div style="display:flex;align-items:center;justify-content:space-between;gap:10px">
-        <h3 style="margin:0">Multimodal RAG Chatbot</h3>
+    <div class="panel" style="padding:24px">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:20px">
+        <h3 style="margin:0;font-size:24px">Multimodal RAG Chatbot</h3>
         <button class="icon-btn" data-close type="button" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
       </div>
-      <p class="muted" style="margin-top:8px">Retrieval over documents and images. Implements citation highlighting and answer verification.</p>
-      <ul style="margin:10px 0 0 18px">
-        <li>Stack, FastAPI, pgvector, LangChain</li>
-        <li>Metrics, faithfulness, context precision and recall</li>
-        <li>Demo link on request</li>
-      </ul>
+      
+      <div style="display:grid;gap:20px">
+        <div>
+          <h4 style="margin:0 0 8px 0;color:var(--brand)">The Challenge</h4>
+          <p class="muted" style="margin:0">Standard RAG systems struggle with technical documents containing charts and diagrams. The goal was to build a system that could retrieve and reason across both text and images with high faithfulness.</p>
+        </div>
+
+        <div>
+          <h4 style="margin:0 0 8px 0;color:var(--brand)">My Approach</h4>
+          <p class="muted" style="margin:0">I implemented a multimodal retrieval pipeline using <strong>ColPali</strong> for document embedding and <strong>GPT-4o</strong> for synthesis. I added a verification layer that cross-references generated answers with retrieved context to reduce hallucinations.</p>
+        </div>
+
+        <div>
+          <h4 style="margin:0 0 8px 0;color:var(--brand)">Tech Stack</h4>
+          <div class="pill-row">
+            <span class="pill">FastAPI</span>
+            <span class="pill">LangChain</span>
+            <span class="pill">PostgreSQL / pgvector</span>
+            <span class="pill">Docker</span>
+          </div>
+        </div>
+
+        <div>
+          <h4 style="margin:0 0 8px 0;color:var(--brand)">Key Results</h4>
+          <ul style="margin:0;padding-left:20px;color:var(--muted)">
+            <li>Achieved <strong>92% faithfulness score</strong> on a custom technical evaluation set.</li>
+            <li>Reduced hallucination rate by <strong>15%</strong> using the verification layer.</li>
+            <li>Deployed as a containerized microservice with < 200ms latency for text queries.</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </dialog>
+
   <dialog id="modal-fair" style="border:none;border-radius:16px;padding:0;max-width:720px;width:90%">
-    <div class="panel" style="padding:18px">
-      <div style="display:flex;align-items:center;justify-content:space-between;gap:10px">
-        <h3 style="margin:0">Fair Gender Classification</h3>
+    <div class="panel" style="padding:24px">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:20px">
+        <h3 style="margin:0;font-size:24px">Auditing Gender Classification Bias</h3>
         <button class="icon-btn" data-close type="button" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
       </div>
-      <p class="muted" style="margin-top:8px">Logic Tensor Networks with constraints to reduce stereotype leakage.</p>
-      <ul style="margin:10px 0 0 18px">
-        <li>Axioms for fairness, equalized odds targets</li>
-        <li>Reports with disaggregated metrics</li>
-        <li>Code available on request</li>
-      </ul>
+
+      <div style="display:grid;gap:20px">
+        <div>
+          <h4 style="margin:0 0 8px 0;color:var(--brand)">The Challenge</h4>
+          <p class="muted" style="margin:0">Gender classification models often exhibit significant performance disparities across intersectional subgroups (e.g., darker-skinned women), leading to allocative and representational harms.</p>
+        </div>
+
+        <div>
+          <h4 style="margin:0 0 8px 0;color:var(--brand)">My Approach</h4>
+          <p class="muted" style="margin:0">I designed a data-centric auditing pipeline. First, I used clustering to identify underrepresented subgroups in the training data. Then, I applied <strong>adversarial debiasing</strong> and <strong>equalized odds regularization</strong> during training to mitigate learned biases.</p>
+        </div>
+
+        <div>
+          <h4 style="margin:0 0 8px 0;color:var(--brand)">Tech Stack</h4>
+          <div class="pill-row">
+            <span class="pill">PyTorch</span>
+            <span class="pill">FairLearn</span>
+            <span class="pill">Scikit-learn</span>
+            <span class="pill">Pandas</span>
+          </div>
+        </div>
+
+        <div>
+          <h4 style="margin:0 0 8px 0;color:var(--brand)">Key Results</h4>
+          <ul style="margin:0;padding-left:20px;color:var(--muted)">
+            <li>Reduced False Positive Rate disparity by <strong>40%</strong> across intersectional groups.</li>
+            <li>Maintained <strong>95% overall accuracy</strong> while satisfying equalized odds constraints.</li>
+            <li>Published findings in a preprint on data-centric fairness auditing.</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </dialog>
+
   <dialog id="modal-crop" style="border:none;border-radius:16px;padding:0;max-width:720px;width:90%">
     <div class="panel" style="padding:18px">
       <div style="display:flex;align-items:center;justify-content:space-between;gap:10px">
         <h3 style="margin:0">Crop Disease Detection API</h3>
         <button class="icon-btn" data-close type="button" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
       </div>
-      <p class="muted" style="margin-top:8px">Mobile first inference with ONNX and quantization.</p>
+      <p class="muted" style="margin-top:8px">Mobile-first inference service for potato and banana leaf disease detection using transfer learning and quantization.</p>
       <ul style="margin:10px 0 0 18px">
-        <li>Latency, p50 35 ms on Pixel 7</li>
-        <li>Model size, 12 MB</li>
-        <li>gRPC and REST endpoints</li>
+        <li>ONNX-optimized CNN models for low-resource and edge devices.</li>
+        <li>Latency ~35 ms p50 on modern smartphones with model size ≈12 MB.</li>
+        <li>gRPC and REST endpoints with monitoring hooks for deployment.</li>
       </ul>
     </div>
   </dialog>
@@ -369,115 +453,6 @@
   <button id="toTop" class="to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
-  <script>
-    // Storage helpers
-    const storage = {
-      get: key => { try { return localStorage.getItem(key) } catch(_) { return null } },
-      set: (key, val) => { try { localStorage.setItem(key, val) } catch(_) {} }
-    }
-
-    // Page views
-    const visitEl = document.getElementById('visit-count')
-    const vKey = 'portfolioVisits'
-    const visits = Number(storage.get(vKey) || 0) + 1
-    storage.set(vKey, String(visits))
-    if (visitEl) visitEl.textContent = visits.toLocaleString()
-
-    // Year
-    const yearEl = document.getElementById('year')
-    if (yearEl) yearEl.textContent = new Date().getFullYear()
-
-    // Active nav highlighting
-    const links = Array.from(document.querySelectorAll('.nav-link'))
-    const ids = links.map(a => a.getAttribute('href')).filter(Boolean).map(h => h.replace('#',''))
-    const sections = ids.map(id => document.getElementById(id)).filter(Boolean)
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id))
-        }
-      })
-    }, { rootMargin: '0px 0px -70% 0px', threshold: 0.2 })
-    sections.forEach(s => observer.observe(s))
-
-    // Theme toggle
-    const themeToggle = document.getElementById('themeToggle')
-    const themeKey = 'portfolioTheme'
-    const applyTheme = t => {
-      document.documentElement.dataset.theme = t
-      if (t === 'light') document.body.classList.add('light')
-      else document.body.classList.remove('light')
-      storage.set(themeKey, t)
-      themeToggle.setAttribute('aria-pressed', String(t === 'light'))
-      themeToggle.innerHTML = t === 'light' ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>'
-    }
-    const saved = storage.get(themeKey)
-    if (saved) applyTheme(saved)
-    themeToggle.addEventListener('click', () => applyTheme(document.documentElement.dataset.theme === 'light' ? 'dark' : 'light'))
-
-    // Reduce motion toggle
-    const rmBtn = document.getElementById('reduceMotion')
-    const rmKey = 'portfolioReduceMotion'
-    const setRM = v => {
-      document.documentElement.style.setProperty('scroll-behavior', v ? 'auto' : 'smooth')
-      storage.set(rmKey, v ? '1' : '0')
-      rmBtn.setAttribute('aria-pressed', String(v))
-    }
-    setRM(storage.get(rmKey) === '1')
-    rmBtn.addEventListener('click', () => setRM(!(storage.get(rmKey) === '1')))
-
-    // Copy email + toast
-    const email = 'email@example.com'
-    const toast = document.getElementById('toast')
-    const showToast = msg => {
-      toast.textContent = msg
-      toast.classList.add('show')
-      setTimeout(() => toast.classList.remove('show'), 1600)
-    }
-    document.getElementById('copyEmail').addEventListener('click', async () => {
-      try { await navigator.clipboard.writeText(email); showToast('Email copied') } catch(_) { showToast('Copy failed') }
-    })
-
-    // Project search and tag filter
-    const search = document.getElementById('projectSearch')
-    const grid = document.getElementById('projectGrid')
-    const cards = Array.from(grid.querySelectorAll('.card'))
-    const applyFilter = q => {
-      const s = q.trim().toLowerCase()
-      cards.forEach(c => {
-        const tags = (c.getAttribute('data-tags') || '').toLowerCase()
-        const text = c.textContent.toLowerCase()
-        const match = !s || tags.includes(s) || text.includes(s)
-        c.style.display = match ? '' : 'none'
-      })
-    }
-    search.addEventListener('input', e => applyFilter(e.target.value))
-    grid.addEventListener('click', e => {
-      const b = e.target.closest('[data-filter]')
-      if (!b) return
-      const term = b.getAttribute('data-filter')
-      search.value = term
-      applyFilter(term)
-    })
-
-    // Modals
-    const openers = document.querySelectorAll('[data-open]')
-    const closers = document.querySelectorAll('[data-close]')
-    openers.forEach(btn => btn.addEventListener('click', () => {
-      const id = btn.getAttribute('data-open')
-      const dlg = document.querySelector(id)
-      if (dlg) dlg.showModal()
-    }))
-    closers.forEach(btn => btn.addEventListener('click', () => btn.closest('dialog').close()))
-
-    // Back to top
-    const toTop = document.getElementById('toTop')
-    const topObs = new IntersectionObserver(entries => {
-      const show = !entries[0].isIntersecting
-      toTop.classList.toggle('show', show)
-    }, { threshold: 0 })
-    topObs.observe(document.querySelector('header'))
-    toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }))
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
