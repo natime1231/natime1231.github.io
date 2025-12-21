@@ -153,3 +153,24 @@ const revealObs = new IntersectionObserver(entries => {
   })
 }, { threshold: 0.1 })
 document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el))
+
+// Mobile Menu Toggle
+const menuToggle = document.getElementById('menuToggle')
+const navContent = document.getElementById('navContent')
+if (menuToggle && navContent) {
+  menuToggle.addEventListener('click', () => {
+    const expanded = menuToggle.getAttribute('aria-expanded') === 'true'
+    menuToggle.setAttribute('aria-expanded', !expanded)
+    navContent.classList.toggle('show')
+    menuToggle.innerHTML = expanded ? '<i class="fa-solid fa-bars"></i>' : '<i class="fa-solid fa-xmark"></i>'
+  })
+  
+  // Close menu when clicking a link
+  navContent.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navContent.classList.remove('show')
+      menuToggle.setAttribute('aria-expanded', 'false')
+      menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>'
+    })
+  })
+}

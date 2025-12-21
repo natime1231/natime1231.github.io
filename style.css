@@ -75,9 +75,35 @@ h1 { font-size: clamp(26px, 3.4vw, 36px); margin: 0 0 6px 0 }
 /* Nav */
 nav { position: sticky; top: 0; z-index: 50; background: rgba(6,7,10,0.75); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.06) }
 @media (prefers-color-scheme: light) { nav { background: rgba(255,255,255,0.85) } }
-.nav-wrap { display: flex; gap: 18px; overflow-x: auto; padding: 10px 0 }
+.nav-wrap { display: flex; gap: 18px; align-items: center; padding: 10px 0; position: relative }
 .nav-link { color: var(--muted); padding: 8px 10px; border-radius: 10px; white-space: nowrap }
 .nav-link.active, .nav-link:hover { color: var(--text); background: rgba(255,255,255,0.06) }
+
+@media (max-width: 768px) {
+  .nav-wrap { flex-wrap: wrap; justify-content: space-between }
+  #menuToggle { display: inline-grid !important }
+  #navContent { 
+    display: none !important; 
+    position: absolute; 
+    top: 100%; 
+    left: 20px; 
+    right: 20px; 
+    background: var(--panel); 
+    border: 1px solid rgba(255,255,255,0.1); 
+    border-radius: 16px; 
+    padding: 16px; 
+    flex-direction: column; 
+    gap: 10px; 
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5); 
+    z-index: 100;
+    transform-origin: top center;
+    animation: menuSlide 0.2s ease-out;
+  }
+  #navContent.show { display: flex !important }
+  .search-box { margin-left: 0 !important; width: 100% }
+  .search-box input { width: 100% }
+  @keyframes menuSlide { from { opacity: 0; transform: translateY(-10px) } to { opacity: 1; transform: translateY(0) } }
+}
 
 /* Sections */
 section { padding: 28px 0 }
