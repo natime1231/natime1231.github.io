@@ -29,32 +29,6 @@ const observer = new IntersectionObserver(entries => {
 }, { rootMargin: '0px 0px -70% 0px', threshold: 0.2 })
 sections.forEach(s => observer.observe(s))
 
-// Theme toggle
-const themeToggle = document.getElementById('themeToggle')
-const themeKey = 'portfolioTheme'
-const applyTheme = t => {
-  document.documentElement.dataset.theme = t
-  if (t === 'light') document.body.classList.add('light')
-  else document.body.classList.remove('light')
-  storage.set(themeKey, t)
-  themeToggle.setAttribute('aria-pressed', String(t === 'light'))
-  themeToggle.innerHTML = t === 'light' ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>'
-}
-const saved = storage.get(themeKey)
-if (saved) applyTheme(saved)
-themeToggle.addEventListener('click', () => applyTheme(document.documentElement.dataset.theme === 'light' ? 'dark' : 'light'))
-
-// Reduce motion toggle
-const rmBtn = document.getElementById('reduceMotion')
-const rmKey = 'portfolioReduceMotion'
-const setRM = v => {
-  document.documentElement.style.setProperty('scroll-behavior', v ? 'auto' : 'smooth')
-  storage.set(rmKey, v ? '1' : '0')
-  rmBtn.setAttribute('aria-pressed', String(v))
-}
-setRM(storage.get(rmKey) === '1')
-rmBtn.addEventListener('click', () => setRM(!(storage.get(rmKey) === '1')))
-
 // Copy email + toast
 const email = 'natnael.tilahun@uh.edu'
 const toast = document.getElementById('toast')
@@ -70,41 +44,46 @@ document.getElementById('copyEmail').addEventListener('click', async () => {
 // Project search and tag filter
 const search = document.getElementById('projectSearch')
 const grid = document.getElementById('projectGrid')
-const cards = Array.from(grid.querySelectorAll('.card'))
 
-// Create no results message
-const noResults = document.createElement('p')
-noResults.className = 'muted'
-noResults.style.textAlign = 'center'
-noResults.style.gridColumn = '1/-1'
-noResults.style.display = 'none'
-noResults.textContent = 'No projects found matching your search.'
-grid.appendChild(noResults)
+if (search && grid) {
+  const cards = Array.from(grid.querySelectorAll('.card'))
 
-const applyFilter = q => {
-  const terms = q.trim().toLowerCase().split(/\s+/).filter(Boolean)
-  let visibleCount = 0
-  
-  cards.forEach(c => {
-    const tags = (c.getAttribute('data-tags') || '').toLowerCase()
-    const text = c.textContent.toLowerCase()
-    // Smart search: Match if ALL terms appear in the card (tags or text)
-    const match = terms.length === 0 || terms.every(term => tags.includes(term) || text.includes(term))
+  // Create no results message
+  const noResults = document.createElement('p')
+  noResults.className = 'muted'
+  noResults.style.textAlign = 'center'
+  noResults.style.gridColumn = '1/-1'
+  noResults.style.display = 'none'
+  noResults.textContent = 'No projects found matching your search.'
+  grid.appendChild(noResults)
+
+  const applyFilter = q => {
+    const terms = q.trim().toLowerCase().split(/\s+/).filter(Boolean)
+    let visibleCount = 0
     
-    c.style.display = match ? '' : 'none'
-    if (match) visibleCount++
-  })
+    cards.forEach(c => {
+      const tags = (c.getAttribute('data-tags') || '').toLowerCase()
+      const text = c.textContent.toLowerCase()
+      // Smart search: Match if ALL terms appear in the card (tags or text)
+      const match = terms.length === 0 || terms.every(term => tags.includes(term) || text.includes(term))
+      
+      c.style.display = match ? '' : 'none'
+      if (match) visibleCount++
+    })
+    
+    noResults.style.display = visibleCount === 0 ? 'block' : 'none'
+  }
+
+  search.addEventListener('input', e => applyFilter(e.target.value))
   
-  noResults.style.display = visibleCount === 0 ? 'block' : 'none'
+  grid.addEventListener('click', e => {
+    const b = e.target.closest('[data-filter]')
+    if (!b) return
+    const term = b.getAttribute('data-filter')
+    search.value = term
+    applyFilter(term)
+  })
 }
-search.addEventListener('input', e => applyFilter(e.target.value))
-grid.addEventListener('click', e => {
-  const b = e.target.closest('[data-filter]')
-  if (!b) return
-  const term = b.getAttribute('data-filter')
-  search.value = term
-  applyFilter(term)
-})
 
 // Modals
 const openers = document.querySelectorAll('[data-open]')
