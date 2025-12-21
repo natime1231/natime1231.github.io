@@ -41,49 +41,7 @@ document.getElementById('copyEmail').addEventListener('click', async () => {
   try { await navigator.clipboard.writeText(email); showToast('Email copied') } catch(_) { showToast('Copy failed') }
 })
 
-// Project search and tag filter
-const search = document.getElementById('projectSearch')
-const grid = document.getElementById('projectGrid')
 
-if (search && grid) {
-  const cards = Array.from(grid.querySelectorAll('.card'))
-
-  // Create no results message
-  const noResults = document.createElement('p')
-  noResults.className = 'muted'
-  noResults.style.textAlign = 'center'
-  noResults.style.gridColumn = '1/-1'
-  noResults.style.display = 'none'
-  noResults.textContent = 'No projects found matching your search.'
-  grid.appendChild(noResults)
-
-  const applyFilter = q => {
-    const terms = q.trim().toLowerCase().split(/\s+/).filter(Boolean)
-    let visibleCount = 0
-    
-    cards.forEach(c => {
-      const tags = (c.getAttribute('data-tags') || '').toLowerCase()
-      const text = c.textContent.toLowerCase()
-      // Smart search: Match if ALL terms appear in the card (tags or text)
-      const match = terms.length === 0 || terms.every(term => tags.includes(term) || text.includes(term))
-      
-      c.style.display = match ? '' : 'none'
-      if (match) visibleCount++
-    })
-    
-    noResults.style.display = visibleCount === 0 ? 'block' : 'none'
-  }
-
-  search.addEventListener('input', e => applyFilter(e.target.value))
-  
-  grid.addEventListener('click', e => {
-    const b = e.target.closest('[data-filter]')
-    if (!b) return
-    const term = b.getAttribute('data-filter')
-    search.value = term
-    applyFilter(term)
-  })
-}
 
 // Modals
 const openers = document.querySelectorAll('[data-open]')

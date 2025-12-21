@@ -104,8 +104,6 @@ nav { position: sticky; top: 0; z-index: 50; background: rgba(6,7,10,0.75); back
     animation: menuSlide 0.2s ease-out;
   }
   #navContent.show { display: flex !important }
-  .search-box { margin-left: 0 !important; width: 100% }
-  .search-box input { width: 100% }
   @keyframes menuSlide { from { opacity: 0; transform: translateY(-10px) } to { opacity: 1; transform: translateY(0) } }
 }
 
