@@ -116,6 +116,15 @@ if (previewBtn && cvModal) {
 }
 
 // GitHub API
+const escapeHTML = str => str ? str.replace(/[&<>'"]/g, 
+  tag => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    "'": '&#39;',
+    '"': '&quot;'
+  }[tag])) : ''
+
 const fetchGitHubRepos = async () => {
   const container = document.getElementById('github-repos')
   if (!container) return
@@ -126,16 +135,16 @@ const fetchGitHubRepos = async () => {
     const repos = await res.json()
     
     container.innerHTML = repos.map(repo => `
-      <a href="${repo.html_url}" target="_blank" rel="noopener" class="card" style="text-decoration:none;color:inherit;display:flex;flex-direction:column">
+      <a href="${escapeHTML(repo.html_url)}" target="_blank" rel="noopener" class="card" style="text-decoration:none;color:inherit;display:flex;flex-direction:column">
         <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:8px">
-          <h3 style="margin:0;font-size:16px;color:var(--brand)">${repo.name}</h3>
+          <h3 style="margin:0;font-size:16px;color:var(--brand)">${escapeHTML(repo.name)}</h3>
           <span class="muted" style="font-size:12px"><i class="fa-regular fa-star"></i> ${repo.stargazers_count}</span>
         </div>
         <p class="muted" style="font-size:14px;flex:1;margin:0 0 12px 0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden">
-          ${repo.description || 'No description available.'}
+          ${escapeHTML(repo.description) || 'No description available.'}
         </p>
         <div class="meta" style="margin-top:auto">
-          ${repo.language ? `<span class="badge">${repo.language}</span>` : ''}
+          ${repo.language ? `<span class="badge">${escapeHTML(repo.language)}</span>` : ''}
           <span style="font-size:12px">Updated ${new Date(repo.updated_at).toLocaleDateString()}</span>
         </div>
       </a>
