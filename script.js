@@ -69,45 +69,7 @@ if (previewBtn && cvModal) {
   previewBtn.addEventListener('click', () => cvModal.showModal())
 }
 
-// GitHub API
-const escapeHTML = str => str ? str.replace(/[&<>'"]/g, 
-  tag => ({
-    '&': '&amp;',
-    '<': '&lt;',
-    '>': '&gt;',
-    "'": '&#39;',
-    '"': '&quot;'
-  }[tag])) : ''
 
-const fetchGitHubRepos = async () => {
-  const container = document.getElementById('github-repos')
-  if (!container) return
-
-  try {
-    const res = await fetch('https://api.github.com/users/natime1231/repos?sort=updated&per_page=6')
-    if (!res.ok) throw new Error('Failed to fetch')
-    const repos = await res.json()
-    
-    container.innerHTML = repos.map(repo => `
-      <a href="${escapeHTML(repo.html_url)}" target="_blank" rel="noopener" class="card" style="text-decoration:none;color:inherit;display:flex;flex-direction:column">
-        <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:8px">
-          <h3 style="margin:0;font-size:16px;color:var(--brand)">${escapeHTML(repo.name)}</h3>
-          <span class="muted" style="font-size:12px"><i class="fa-regular fa-star"></i> ${repo.stargazers_count}</span>
-        </div>
-        <p class="muted" style="font-size:14px;flex:1;margin:0 0 12px 0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden">
-          ${escapeHTML(repo.description) || 'No description available.'}
-        </p>
-        <div class="meta" style="margin-top:auto">
-          ${repo.language ? `<span class="badge">${escapeHTML(repo.language)}</span>` : ''}
-          <span style="font-size:12px">Updated ${new Date(repo.updated_at).toLocaleDateString()}</span>
-        </div>
-      </a>
-    `).join('')
-  } catch (e) {
-    container.innerHTML = `<p class="muted" style="grid-column:1/-1;text-align:center">Failed to load repositories. <a href="https://github.com/natime1231" target="_blank">View on GitHub</a></p>`
-  }
-}
-fetchGitHubRepos()
 
 // Scroll Reveal Observer
 const revealObs = new IntersectionObserver(entries => {
