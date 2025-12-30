@@ -118,3 +118,42 @@ if (menuToggle && navContent) {
     })
   })
 }
+
+// Contact Form Handling
+const contactForm = document.getElementById('contactForm')
+const formStatus = document.getElementById('formStatus')
+
+if (contactForm) {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault()
+    const data = new FormData(contactForm)
+    
+    try {
+      const res = await fetch(contactForm.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      })
+      
+      if (res.ok) {
+        formStatus.textContent = "Thanks! Your message has been sent."
+        formStatus.style.color = "var(--ok)"
+        formStatus.style.display = "block"
+        contactForm.reset()
+      } else {
+        const json = await res.json()
+        if (Object.hasOwn(json, 'errors')) {
+          formStatus.textContent = json.errors.map(error => error["message"]).join(", ")
+        } else {
+          formStatus.textContent = "Oops! There was a problem submitting your form."
+        }
+        formStatus.style.color = "var(--warn)"
+        formStatus.style.display = "block"
+      }
+    } catch (error) {
+      formStatus.textContent = "Oops! There was a problem submitting your form."
+      formStatus.style.color = "var(--warn)"
+      formStatus.style.display = "block"
+    }
+  })
+}
