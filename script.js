@@ -142,7 +142,7 @@ if (contactForm) {
         contactForm.reset()
       } else {
         const json = await res.json()
-        if (Object.hasOwn(json, 'errors')) {
+        if (json.errors) {
           formStatus.textContent = json.errors.map(error => error["message"]).join(", ")
         } else {
           formStatus.textContent = "Oops! There was a problem submitting your form."
@@ -151,6 +151,7 @@ if (contactForm) {
         formStatus.style.display = "block"
       }
     } catch (error) {
+      console.error("Form error:", error)
       formStatus.textContent = "Oops! There was a problem submitting your form."
       formStatus.style.color = "var(--warn)"
       formStatus.style.display = "block"
