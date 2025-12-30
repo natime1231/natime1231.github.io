@@ -144,6 +144,8 @@ if (contactForm) {
         const json = await res.json()
         if (json.errors) {
           formStatus.textContent = json.errors.map(error => error["message"]).join(", ")
+        } else if (json.error) {
+          formStatus.textContent = json.error
         } else {
           formStatus.textContent = "Oops! There was a problem submitting your form."
         }
@@ -152,7 +154,7 @@ if (contactForm) {
       }
     } catch (error) {
       console.error("Form error:", error)
-      formStatus.textContent = "Oops! There was a problem submitting your form."
+      formStatus.innerHTML = "Oops! There was a problem. Please <a href='mailto:natnael.tilahun@uh.edu' style='color:inherit;text-decoration:underline'>email me directly</a>."
       formStatus.style.color = "var(--warn)"
       formStatus.style.display = "block"
     }
