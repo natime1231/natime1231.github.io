@@ -140,6 +140,27 @@ section { padding: 28px 0 }
 .tl-item { position: relative; padding: 8px 0 8px 16px }
 .tl-item::before { content: ""; position: absolute; left: -2px; top: 14px; width: 10px; height: 10px; border-radius: 999px; background: var(--brand) }
 
+/* Contact Form */
+.contact-form { display: flex; flex-direction: column; gap: 16px }
+.form-group { display: flex; flex-direction: column; gap: 6px }
+.form-group label { font-size: 13px; font-weight: 500; color: var(--muted) }
+.form-group input, .form-group textarea {
+  background: var(--bg);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 10px 12px;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 14px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.form-group input:focus, .form-group textarea:focus {
+  border-color: var(--brand);
+  outline: none;
+  box-shadow: 0 0 0 3px var(--ring);
+}
+.form-group textarea { resize: vertical; min-height: 100px }
+
 /* Footer */
 footer { padding: 22px 0; color: var(--muted) }
 

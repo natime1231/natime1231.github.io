@@ -1,19 +1,38 @@
-// Storage helpers
-const storage = {
-  get: key => { try { return localStorage.getItem(key) } catch(_) { return null } },
-  set: (key, val) => { try { localStorage.setItem(key, val) } catch(_) {} }
-}
-
 // Year
 const yearEl = document.getElementById('year')
 if (yearEl) yearEl.textContent = new Date().getFullYear()
 
-// Last Updated
+// Last Updated (from GitHub API)
 const lastUpdatedEl = document.getElementById('lastUpdated')
 if (lastUpdatedEl) {
-  const date = new Date()
-  const options = { year: 'numeric', month: 'long', day: 'numeric' }
-  lastUpdatedEl.textContent = date.toLocaleDateString('en-US', options)
+  fetch('https://api.github.com/repos/natime1231/natime1231.github.io/commits?per_page=1')
+    .then(res => res.json())
+    .then(commits => {
+      const date = new Date(commits[0].commit.author.date)
+      const options = { year: 'numeric', month: 'long', day: 'numeric' }
+      lastUpdatedEl.textContent = date.toLocaleDateString('en-US', options)
+    })
+    .catch(() => {
+      const date = new Date()
+      const options = { year: 'numeric', month: 'long', day: 'numeric' }
+      lastUpdatedEl.textContent = date.toLocaleDateString('en-US', options)
+    })
+}
+
+// Load Publications
+const pubList = document.getElementById('publicationList')
+if (pubList) {
+  fetch('publications.json')
+    .then(res => res.json())
+    .then(data => {
+      pubList.innerHTML = data.map(pub => `
+        <li>
+          <div class="pub-title"><a href="${pub.url}" target="_blank" rel="noopener">${pub.title}</a></div>
+          <div class="pub-venue">${pub.venue}</div>
+        </li>
+      `).join('')
+    })
+    .catch(err => console.error('Failed to load publications', err))
 }
 
 // Active nav highlighting

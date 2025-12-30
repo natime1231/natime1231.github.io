@@ -178,39 +178,8 @@
 
     <section id="publications" class="panel reveal" aria-labelledby="pubs-title">
       <h2 class="section-title" id="pubs-title"><i class="fa-solid fa-book"></i> Selected Publications</h2>
-      <ol style="margin:0;padding-left:20px">
-        <li>
-          <div class="pub-title"><a href="https://doi.org/10.1109/ICT4DA67218.2025.11282773" target="_blank" rel="noopener">Blog Data Showdown: Machine Learning vs Neuro-Symbolic Models for Gender Classification</a></div>
-          <div class="pub-venue">Sinshaw, Natnael Tilahun, Mengmei He, Tadesse K. Bahiru, and Sudhir Kumar Mohapatra, <em>in 2025 International Conference on Information and Communication Technology for Development for Africa (ICT4DA)</em>, 2025, pp. 229-234.</div>
-        </li>
-        <li>
-          <div class="pub-title"><a href="https://doi.org/10.1109/ICT4DA67218.2025.11282712" target="_blank" rel="noopener">Auditing and Mitigating Bias in Gender Classification Algorithms: A Data-Centric Approach</a></div>
-          <div class="pub-venue">Tadesse K. Bahiru, Sinshaw, Natnael Tilahun, Teshager Hailemariam Moges, and Dheeraj Kumar Singh, <em>in 2025 International Conference on Information and Communication Technology for Development for Africa (ICT4DA)</em>, 2025, pp. 1-6.</div>
-        </li>
-        <li>
-          <div class="pub-title"><a href="https://doi.org/10.24200/sci.2024.62306.7766" target="_blank" rel="noopener">Sigatoka and Xanthomonas banana leaf disease detection via transfer learning</a></div>
-          <div class="pub-venue">Yordanos Hailu Genet, Sinshaw, Natnael Tilahun, Beakal Gizachew Assefa, and Sudhir Kumar Mohapatra, <em>Scientia Iranica</em>, vol. 31, no. 21, pp. 1939-1947, 2024.</div>
-        </li>
-        <li>
-          <div class="pub-title"><a href="https://doi.org/10.21203/rs.3.rs-2878655/v1" target="_blank" rel="noopener">Amharic Handwritten & Machine Printed Character Recognition Using Deep CNN with Random Search Hyperparameter Optimization Algorithm</a></div>
-          <div class="pub-venue">Sinshaw, Natnael Tilahun, Biniam Ewnetu Ejigu, Beakal Gizachew Assefa, and Sudhir Kumar Mohapatra, <em>Research Square (Preprint)</em>, May 12, 2023.</div>
-        </li>
-        <li>
-          <div class="pub-title"><a href="https://doi.org/10.4018/979-8-3693-0593-5.ch009" target="_blank" rel="noopener">Enhanced Throttled Load Balancing Algorithm for Optimizing Cloud Computing Efficiency</a></div>
-          <div class="pub-venue">Sudhir Kumar Mohapatra, Tarikwa Tesfa, Srinivas Prasad, and Sinshaw, Natnael Tilahun, <em>in Privacy Preservation and Secured Data Storage in Cloud Computing, Lakshmi D. and Amit Kumar Tyagi, Eds. Hershey, PA, USA: IGI Global Scientific Publishing</em>, 2023, pp. 197-225.</div>
-        </li>
-        <li>
-          <div class="pub-title"><a href="https://doi.org/10.5815/ijem.2023.04.04" target="_blank" rel="noopener">Transfer Learning based Breast Cancer Classification via Deep Convolutional Neural Network</a></div>
-          <div class="pub-venue">Markos Wondim Walle, Kula Kakeba Tune, Sinshaw, Natnael Tilahun, and Sudhir Kumar Mohapatra, <em>International Journal of Engineering and Manufacturing (IJEM)</em>, vol. 13, no. 4, pp. 34-43, 2023.</div>
-        </li>
-        <li>
-          <div class="pub-title"><a href="https://doi.org/10.1155/2022/7186687" target="_blank" rel="noopener">Applications of Computer Vision on Automatic Potato Plant Disease Detection: A Systematic Literature Review</a></div>
-          <div class="pub-venue">Sinshaw, Natnael Tilahun, Beakal Gizachew Assefa, Sudhir Kumar Mohapatra, and Asrat Mulatu Beyene, <em>Computational Intelligence and Neuroscience</em>, vol. 2022, no. 1, p. 7186687, 2022.</div>
-        </li>
-        <li>
-          <div class="pub-title"><a href="https://doi.org/10.1109/ICT4DA53266.2021.9672243" target="_blank" rel="noopener">Transfer Learning and Data Augmentation Based CNN Model for Potato Late Blight Disease Detection</a></div>
-          <div class="pub-venue">Sinshaw, Natnael Tilahun, Beakal Gizachew Assefa, and Sudhir Kumar Mohapatra, <em>in 2021 International Conference on Information and Communication Technology for Development for Africa (ICT4DA)</em>, 2021, pp. 30-35.</div>
-        </li>
+      <ol id="publicationList" style="margin:0;padding-left:20px">
+        <!-- Publications will be loaded from publications.json -->
       </ol>
     </section>
 
@@ -292,23 +261,46 @@
 
     <section id="contact" class="panel reveal" aria-labelledby="contact-title">
       <h2 class="section-title" id="contact-title"><i class="fa-solid fa-envelope"></i>Contact</h2>
-      <div class="grid auto">
-        <div class="card" aria-label="email">
-          <h3><i class="fa-solid fa-at"></i> Email</h3>
-          <p><a id="emailLink" href="mailto:natnael.tilahun@uh.edu">natnael.tilahun@uh.edu</a></p>
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+        <!-- Contact Form -->
+        <div class="card">
+          <h3 style="margin-bottom:16px">Send a Message</h3>
+          <form action="https://formspree.io/f/maqyvard" method="POST" class="contact-form">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required placeholder="Your Name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required placeholder="your@email.com">
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" required placeholder="How can I help you?"></textarea>
+            </div>
+            <button type="submit" class="btn" style="width:100%;justify-content:center">Send Message</button>
+          </form>
         </div>
-        <div class="card" aria-label="linkedin">
-          <h3><i class="fa-brands fa-linkedin"></i> LinkedIn</h3>
-          <p><a href="https://www.linkedin.com/in/natnaelsinshaw" target="_blank" rel="noopener">linkedin.com/in/natnaelsinshaw</a></p>
-        </div>
-        <div class="card" aria-label="github">
-          <h3><i class="fa-brands fa-github"></i> GitHub</h3>
-          <p><a href="https://github.com/natime1231" target="_blank" rel="noopener">github.com/natime1231</a></p>
-        </div>
-        <div class="card" aria-label="scholar">
-          <h3><i class="fa-solid fa-graduation-cap"></i> Google Scholar</h3>
-          <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap">
-            <a href="https://scholar.google.com/citations?user=mZ7FUrwAAAAJ&hl=en" target="_blank" rel="noopener">Scholar Profile</a>
+
+        <!-- Contact Info -->
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div class="card" aria-label="email">
+            <h3><i class="fa-solid fa-at"></i> Email</h3>
+            <p><a id="emailLink" href="mailto:natnael.tilahun@uh.edu">natnael.tilahun@uh.edu</a></p>
+          </div>
+          <div class="card" aria-label="linkedin">
+            <h3><i class="fa-brands fa-linkedin"></i> LinkedIn</h3>
+            <p><a href="https://www.linkedin.com/in/natnaelsinshaw" target="_blank" rel="noopener">linkedin.com/in/natnaelsinshaw</a></p>
+          </div>
+          <div class="card" aria-label="github">
+            <h3><i class="fa-brands fa-github"></i> GitHub</h3>
+            <p><a href="https://github.com/natime1231" target="_blank" rel="noopener">github.com/natime1231</a></p>
+          </div>
+          <div class="card" aria-label="scholar">
+            <h3><i class="fa-solid fa-graduation-cap"></i> Google Scholar</h3>
+            <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap">
+              <a href="https://scholar.google.com/citations?user=mZ7FUrwAAAAJ&hl=en" target="_blank" rel="noopener">Scholar Profile</a>
+            </div>
           </div>
         </div>
       </div>
