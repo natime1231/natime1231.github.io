@@ -1,18 +1,8 @@
 [
   {
-    "title": "Blog Data Showdown: Machine Learning vs Neuro-Symbolic Models for Gender Classification",
-    "url": "https://doi.org/10.1109/ICT4DA67218.2025.11282773",
-    "venue": "Natnael Tilahun Sinshaw, Mengmei He, Tadesse K. Bahiru, and Sudhir Kumar Mohapatra, <em>in 2025 International Conference on Information and Communication Technology for Development for Africa (ICT4DA)</em>, 2025, pp. 229-234."
-  },
-  {
-    "title": "Auditing and Mitigating Bias in Gender Classification Algorithms: A Data-Centric Approach",
-    "url": "https://doi.org/10.1109/ICT4DA67218.2025.11282712",
-    "venue": "Tadesse K. Bahiru, Natnael Tilahun Sinshaw, Teshager Hailemariam Moges, and Dheeraj Kumar Singh, <em>in 2025 International Conference on Information and Communication Technology for Development for Africa (ICT4DA)</em>, 2025, pp. 1-6."
-  },
-  {
     "title": "Amharic Handwritten & Machine Printed Character Recognition Using Deep CNN with Random Search Hyperparameter Optimization Algorithm",
     "url": "https://doi.org/10.21203/rs.3.rs-2878655/v1",
-    "venue": "Biniam Ewnetu Ejigu, Natnael Tilahun Sinshaw, Beakal Gizachew Assefa, Jukka Heikkonen, Rajeev Kanth, and Sudhir Kumar Mohapatra, <em>10th International Conference on Soft Computing: Theories and Applications (SoCTA2025)</em>, 2025."
+    "venue": "Biniam Ewnetu Ejigu, Natnael Tilahun Sinshaw, Beakal Gizachew Assefa, Jukka Heikkonen, Rajeev Kanth, and Sudhir Kumar Mohapatra, <em>9th International Conference on Soft Computing: Theories and Applications (SoCTA2025)</em>, 2023."
 },
 {
     "title": "Sigatoka and Xanthomonas banana leaf disease detection via transfer learning",
