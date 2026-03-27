@@ -49,7 +49,7 @@ const observer = new IntersectionObserver(entries => {
 sections.forEach(s => observer.observe(s))
 
 // Copy email + toast
-const email = 'natnael.tilahun@uh.edu'
+const email = 'ntilahun@uh.edu'
 const toast = document.getElementById('toast')
 const showToast = msg => {
   toast.textContent = msg
@@ -154,7 +154,7 @@ if (contactForm) {
       }
     } catch (error) {
       console.error("Form error:", error)
-      formStatus.innerHTML = "Oops! There was a problem. Please <a href='mailto:natnael.tilahun@uh.edu' style='color:inherit;text-decoration:underline'>email me directly</a>."
+      formStatus.innerHTML = "Oops! There was a problem. Please <a href='mailto:ntilahun@uh.edu' style='color:inherit;text-decoration:underline'>email me directly</a>."
       formStatus.style.color = "var(--warn)"
       formStatus.style.display = "block"
     }
