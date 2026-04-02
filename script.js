@@ -81,6 +81,22 @@ const topObs = new IntersectionObserver(entries => {
 topObs.observe(document.querySelector('header'))
 toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }))
 
+// Mobile nav toggle
+const menuToggle = document.getElementById('menuToggle')
+const navContent = document.getElementById('navContent')
+if (menuToggle && navContent) {
+  menuToggle.addEventListener('click', () => {
+    const isOpen = navContent.classList.toggle('show')
+    menuToggle.setAttribute('aria-expanded', String(isOpen))
+  })
+  navContent.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      navContent.classList.remove('show')
+      menuToggle.setAttribute('aria-expanded', 'false')
+    })
+  })
+}
+
 // PDF Preview
 const previewBtn = document.getElementById('previewCV')
 const cvModal = document.getElementById('modal-cv')
@@ -88,7 +104,40 @@ if (previewBtn && cvModal) {
   previewBtn.addEventListener('click', () => cvModal.showModal())
 }
 
-
+// Contact form
+const contactForm = document.getElementById('contactForm')
+if (contactForm) {
+  contactForm.addEventListener('submit', async e => {
+    e.preventDefault()
+    const submitBtn = contactForm.querySelector('[type=submit]')
+    const status = document.getElementById('formStatus')
+    const originalText = submitBtn.textContent
+    submitBtn.disabled = true
+    submitBtn.textContent = 'Sending…'
+    status.style.display = 'none'
+    try {
+      const res = await fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { Accept: 'application/json' }
+      })
+      if (res.ok) {
+        status.textContent = "Message sent! I'll get back to you soon."
+        status.style.color = 'var(--ok)'
+        contactForm.reset()
+      } else {
+        throw new Error()
+      }
+    } catch {
+      status.textContent = 'Something went wrong. Please email directly.'
+      status.style.color = 'var(--warn)'
+    } finally {
+      submitBtn.disabled = false
+      submitBtn.textContent = originalText
+      status.style.display = 'block'
+    }
+  })
+}
 
 // Scroll Reveal Observer
 const revealObs = new IntersectionObserver(entries => {
@@ -97,66 +146,3 @@ const revealObs = new IntersectionObserver(entries => {
   })
 }, { threshold: 0.1 })
 document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el))
-
-// Mobile Menu Toggle
-const menuToggle = document.getElementById('menuToggle')
-const navContent = document.getElementById('navContent')
-if (menuToggle && navContent) {
-  menuToggle.addEventListener('click', () => {
-    const expanded = menuToggle.getAttribute('aria-expanded') === 'true'
-    menuToggle.setAttribute('aria-expanded', !expanded)
-    navContent.classList.toggle('show')
-    menuToggle.innerHTML = expanded ? '<i class="fa-solid fa-bars"></i>' : '<i class="fa-solid fa-xmark"></i>'
-  })
-  
-  // Close menu when clicking a link
-  navContent.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navContent.classList.remove('show')
-      menuToggle.setAttribute('aria-expanded', 'false')
-      menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>'
-    })
-  })
-}
-
-// Contact Form Handling
-const contactForm = document.getElementById('contactForm')
-const formStatus = document.getElementById('formStatus')
-
-if (contactForm) {
-  contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault()
-    const data = new FormData(contactForm)
-    
-    try {
-      const res = await fetch(contactForm.action, {
-        method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      })
-      
-      if (res.ok) {
-        formStatus.textContent = "Thanks! Your message has been sent."
-        formStatus.style.color = "var(--ok)"
-        formStatus.style.display = "block"
-        contactForm.reset()
-      } else {
-        const json = await res.json()
-        if (json.errors) {
-          formStatus.textContent = json.errors.map(error => error["message"]).join(", ")
-        } else if (json.error) {
-          formStatus.textContent = json.error
-        } else {
-          formStatus.textContent = "Oops! There was a problem submitting your form."
-        }
-        formStatus.style.color = "var(--warn)"
-        formStatus.style.display = "block"
-      }
-    } catch (error) {
-      console.error("Form error:", error)
-      formStatus.innerHTML = "Oops! There was a problem. Please <a href='mailto:ntilahun@uh.edu' style='color:inherit;text-decoration:underline'>email me directly</a>."
-      formStatus.style.color = "var(--warn)"
-      formStatus.style.display = "block"
-    }
-  })
-}
