@@ -1,0 +1,61 @@
+# Natnael Tilahun Sinshaw
+
+> PhD researcher in Computer Science at the University of Houston (2024–present), specializing in Data Science, Machine Learning, and Computer Vision. He has 3+ years of research experience in machine learning, deep learning, statistical modeling, and data analysis, and is open to Data Science internships for Summer 2026.
+
+## About
+
+Natnael Tilahun Sinshaw (also written as Natnael T. Sinshaw or NTS) is a PhD student at the University of Houston's Computational Biomedicine Lab (CBL). His work focuses on Data Science, Machine Learning, and Computer Vision, with strong expertise in deep learning, statistical modeling, and end-to-end data analysis. He has applied these methods to domains including agricultural disease detection and medical imaging.
+
+He earned his MSc in Software Engineering (Magna Cum Laude, fully funded) and BSc in Computer Science (Magna Cum Laude, Best Final Project) from Addis Ababa Science and Technology University (AASTU), Ethiopia.
+
+## Contact & Profiles
+
+- Website: https://natime1231.github.io/
+- LinkedIn: https://www.linkedin.com/in/natnaelsinshaw
+- GitHub: https://github.com/natime1231
+- Google Scholar: https://scholar.google.com/citations?user=mZ7FUrwAAAAJ&hl=en
+
+## Research Interests
+
+- Data Science and Statistical Modeling
+- Machine Learning and Deep Learning (PyTorch, TensorFlow, Transformers)
+- Computer Vision (medical imaging, agricultural disease detection)
+- Responsible AI and Algorithmic Fairness (secondary research area)
+- Applied NLP for low-resource and multilingual settings
+
+## Selected Publications
+
+- [Applications of Computer Vision on Automatic Potato Plant Disease Detection: A Systematic Literature Review](https://doi.org/10.1155/2022/7186687) — Computational Intelligence and Neuroscience, 2022. Authors: Natnael Tilahun Sinshaw, Beakal Gizachew Assefa, Sudhir Kumar Mohapatra, Asrat Mulatu Beyene.
+
+- [Transfer Learning and Data Augmentation Based CNN Model for Potato Late Blight Disease Detection](https://doi.org/10.1109/ICT4DA53266.2021.9672243) — ICT4DA 2021. Authors: Natnael Tilahun Sinshaw, Beakal Gizachew Assefa, Sudhir Kumar Mohapatra.
+
+- [Transfer Learning based Breast Cancer Classification via Deep Convolutional Neural Network](https://doi.org/10.5815/ijem.2023.04.04) — IJEM, vol. 13, no. 4, 2023.
+
+- [Sigatoka and Xanthomonas banana leaf disease detection via transfer learning](https://doi.org/10.24200/sci.2024.62306.7766) — Scientia Iranica, vol. 31, no. 21, 2024.
+
+- [Enhanced Throttled Load Balancing Algorithm for Optimizing Cloud Computing Efficiency](https://doi.org/10.4018/979-8-3693-0593-5.ch009) — IGI Global, 2023.
+
+- [Amharic Handwritten & Machine Printed Character Recognition Using Deep CNN with Random Search Hyperparameter Optimization](https://doi.org/10.21203/rs.3.rs-2878655/v1) — SoCTA 2023.
+
+## Awards & Honors
+
+- **Eni Award 2023 — "Young Talents from Africa"**: Honored for pioneering deep learning research in early crop disease detection. Press release: https://www.eni.com/en-IT/media/press-release/2023/07/pr-eni-eniaward-2023.html
+- **GRAIN Grant 2023 — AI for Linguistic Diversity and Inclusion**: Funded by IDRC and Sida for research on gender diversity and equity in AI for African languages. https://grain-africa.org/en/19810-autosave-v1/
+- **Fully Funded PhD Scholarship at University of Turin, Italy** (sponsored by Eni, 2023 — not pursued)
+- **Best Paper Award**: 18th Biennial Conference of the Crop Science Society of Ethiopia, 2020
+- **MSc Full Scholarship**: Addis Ababa Science and Technology University, 2018
+- **Best BSc Final Project**: Computer Science Department, AASTU, 2018
+- **Academic Outstanding Achievement Award**: Ethiopian Chinese Chamber of Commerce, AASTU, 2017
+
+## Education
+
+- **PhD in Computer Science** — University of Houston (2024–present). Computational Biomedicine Lab (CBL). Primary focus: Data Science, Machine Learning, and Computer Vision.
+- **MSc in Software Engineering** — Addis Ababa Science and Technology University (AASTU). Fully funded, Magna Cum Laude. Research: deep learning and computer vision for agricultural and biomedical applications.
+- **BSc in Computer Science** — Addis Ababa Science and Technology University (AASTU). Magna Cum Laude. Best Final Year Project award.
+
+## Technical Skills
+
+- **Programming**: Python, R, SQL, JavaScript
+- **ML / DL**: PyTorch, TensorFlow, Keras, scikit-learn, Hugging Face Transformers, RAG, MLOps
+- **Data & Visualization**: Pandas, NumPy, Matplotlib, Plotly, ETL pipelines
+- **Cloud & DevOps**: AWS (S3, EC2, SageMaker), Docker, GitHub Actions, CI/CD
