@@ -2,22 +2,25 @@
 const yearEl = document.getElementById('year')
 if (yearEl) yearEl.textContent = new Date().getFullYear()
 
-// Last Updated (from GitHub API)
+// Last Updated (from GitHub API) + sync JSON-LD dateModified
 const lastUpdatedEl = document.getElementById('lastUpdated')
-if (lastUpdatedEl) {
-  fetch('https://api.github.com/repos/natime1231/natime1231.github.io/commits?per_page=1')
-    .then(res => res.json())
-    .then(commits => {
-      const date = new Date(commits[0].commit.author.date)
-      const options = { year: 'numeric', month: 'long', day: 'numeric' }
-      lastUpdatedEl.textContent = date.toLocaleDateString('en-US', options)
-    })
-    .catch(() => {
-      const date = new Date()
-      const options = { year: 'numeric', month: 'long', day: 'numeric' }
-      lastUpdatedEl.textContent = date.toLocaleDateString('en-US', options)
-    })
+const profileJsonLd = document.getElementById('profileJsonLd')
+const setLastUpdated = date => {
+  const options = { year: 'numeric', month: 'long', day: 'numeric' }
+  if (lastUpdatedEl) lastUpdatedEl.textContent = date.toLocaleDateString('en-US', options)
+  if (profileJsonLd) {
+    try {
+      const data = JSON.parse(profileJsonLd.textContent)
+      data.dateModified = date.toISOString()
+      profileJsonLd.textContent = JSON.stringify(data)
+    } catch {}
+  }
 }
+// Pulls the latest commit timestamp (= GitHub Pages deploy time)
+fetch('https://api.github.com/repos/natime1231/natime1231.github.io/commits?per_page=1')
+  .then(res => res.json())
+  .then(commits => setLastUpdated(new Date(commits[0].commit.author.date)))
+  .catch(() => setLastUpdated(new Date(2026, 4, 15)))
 
 // Load Publications
 const pubList = document.getElementById('publicationList')
@@ -25,12 +28,27 @@ if (pubList) {
   fetch('publications.json')
     .then(res => res.json())
     .then(data => {
-      pubList.innerHTML = data.map(pub => `
+      const yearOf = pub => {
+        const m = (pub.venue || '').match(/(19|20)\d{2}/g)
+        return m ? Math.max(...m.map(Number)) : 0
+      }
+      data.sort((a, b) => yearOf(b) - yearOf(a))
+      const linkBtn = (href, label, icon) =>
+        `<a class="pub-link" href="${href}" target="_blank" rel="noopener"><i class="${icon}"></i>${label}</a>`
+      pubList.innerHTML = data.map(pub => {
+        const links = []
+        if (pub.url) links.push(linkBtn(pub.url, 'DOI', 'fa-solid fa-link'))
+        if (pub.links?.pdf) links.push(linkBtn(pub.links.pdf, 'PDF', 'fa-solid fa-file-pdf'))
+        if (pub.links?.arxiv) links.push(linkBtn(pub.links.arxiv, 'arXiv', 'fa-solid fa-scroll'))
+        if (pub.links?.code) links.push(linkBtn(pub.links.code, 'Code', 'fa-brands fa-github'))
+        if (pub.links?.dataset) links.push(linkBtn(pub.links.dataset, 'Dataset', 'fa-solid fa-database'))
+        return `
         <li>
           <div class="pub-title"><a href="${pub.url}" target="_blank" rel="noopener">${pub.title}</a></div>
           <div class="pub-venue">${pub.venue}</div>
-        </li>
-      `).join('')
+          <div class="pub-links">${links.join('')}</div>
+        </li>`
+      }).join('')
     })
     .catch(err => console.error('Failed to load publications', err))
 }

@@ -67,12 +67,12 @@
   --brand-ink: #ffffff;
   --brand-glow: rgba(24,24,27,0.10);
   --ring: rgba(24,24,27,0.28);
-  --icon-blue: #2563eb;
-  --icon-blue-glow: rgba(37,99,235,0.16);
-  --cta: #2563eb;
-  --cta-hover: #1d4ed8;
+  --icon-blue: #09090b;
+  --icon-blue-glow: rgba(9,9,11,0.10);
+  --cta: #14532d;
+  --cta-hover: #0f3d22;
   --cta-ink: #ffffff;
-  --cta-glow: rgba(37,99,235,0.20);
+  --cta-glow: rgba(20,83,45,0.28);
   --ok: #22c55e;
   --warn: #f97316;
 
@@ -106,12 +106,12 @@
     --brand-ink: #09090b;
     --brand-glow: rgba(228,228,231,0.16);
     --ring: rgba(228,228,231,0.40);
-    --icon-blue: #60a5fa;
-    --icon-blue-glow: rgba(96,165,250,0.20);
-    --cta: #3b82f6;
-    --cta-hover: #2563eb;
+    --icon-blue: #fafafa;
+    --icon-blue-glow: rgba(250,250,250,0.10);
+    --cta: #15803d;
+    --cta-hover: #14532d;
     --cta-ink: #ffffff;
-    --cta-glow: rgba(59,130,246,0.22);
+    --cta-glow: rgba(21,128,61,0.30);
     --header-bg:
       radial-gradient(900px 460px at 12% -10%, rgba(244,244,245,0.06), transparent 60%),
       linear-gradient(180deg, rgba(255,255,255,0.015), transparent 60%);
@@ -387,7 +387,7 @@ h1 .accent {
   transition: transform .15s ease, background .2s ease, color .2s ease, box-shadow .2s ease, border-color .2s ease;
   box-shadow: 0 1px 2px rgba(37,99,235,0.18), 0 4px 12px rgba(37,99,235,0.14);
 }
-.btn:hover { background: var(--cta-hover); border-color: var(--cta-hover); color: var(--cta-ink); box-shadow: 0 2px 8px rgba(37,99,235,0.28); text-decoration: none }
+.btn:hover { background: var(--cta-hover); border-color: var(--cta-hover); color: var(--cta-ink); box-shadow: 0 2px 8px rgba(20,83,45,0.36); text-decoration: none }
 .btn:active { transform: translateY(1px) }
 .btn.ghost {
   background: transparent;
@@ -700,10 +700,10 @@ section:last-of-type {
   counter-increment: pub;
   position: relative;
   display: grid;
-  grid-template-columns: 60px minmax(0, 1fr);
-  column-gap: 20px;
-  row-gap: 6px;
-  padding: 20px 0;
+  grid-template-columns: 40px minmax(0, 1fr);
+  column-gap: 14px;
+  row-gap: 2px;
+  padding: 12px 0;
   border-bottom: 1px solid var(--border);
   transition: padding-left .2s ease;
 }
@@ -724,24 +724,53 @@ section:last-of-type {
 
 .pub-title {
   font-weight: 600;
-  font-size: 16.5px;
-  margin-bottom: 6px;
-  line-height: 1.4;
-  letter-spacing: -0.012em;
+  font-size: 15px;
+  margin: 0;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
   text-wrap: pretty;
 }
 .pub-title a { color: var(--text); transition: color .2s ease }
 .pub-title a:hover { color: var(--brand) }
 .pub-venue {
   font-family: var(--font-display);
-  font-size: 14.5px;
+  font-size: 13px;
   color: var(--muted);
-  line-height: 1.5;
+  line-height: 1.45;
   font-style: italic;
   font-weight: 400;
   letter-spacing: 0;
 }
 .list-publications li::before { font-variant-numeric: tabular-nums }
+.list-publications .pub-links {
+  grid-column: 2;
+  grid-row: 3;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+.pub-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+  background: var(--bg-elev, rgba(255,255,255,0.04));
+  border: 1px solid var(--border, rgba(255,255,255,0.08));
+  border-radius: 999px;
+  text-decoration: none;
+  transition: color .15s ease, border-color .15s ease, background .15s ease;
+}
+.pub-link:hover {
+  color: var(--brand);
+  border-color: var(--brand);
+  background: transparent;
+}
+.pub-link i { font-size: 11px }
 
 /* ─── Awards ─────────────────────────────────────── */
 .awards-grid {
@@ -757,27 +786,44 @@ section:last-of-type {
 }
 .award-card:hover { transform: translateY(-2px) }
 .award-media {
-  height: 220px;
+  height: 240px;
   overflow: hidden;
   display: block;
   position: relative;
+  background: #0e0e10;
 }
 .award-media::after {
   content: '';
   position: absolute; inset: 0;
-  background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.35));
+  background: linear-gradient(180deg, transparent 55%, rgba(0,0,0,0.45));
   pointer-events: none;
 }
 .award-media img {
-  width: 100%; height: 100%; object-fit: cover;
+  width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%;
   transition: transform .6s cubic-bezier(.2,.7,.2,1);
+  image-rendering: auto;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  filter: saturate(1.05) contrast(1.02);
 }
-.award-card:hover .award-media img { transform: scale(1.04) }
-.award-media.grain img { object-position: 50% 10% }
+.award-card:hover .award-media img { transform: translateZ(0) scale(1.03) }
+.award-media.grain img { object-position: 50% 22% }
+.award-media.act img { object-position: 25% 50% }
 .award-content { padding: 22px }
 .award-head {
-  display: flex; justify-content: space-between; align-items: center;
-  margin-bottom: 10px; gap: 12px; flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  gap: 8px;
+}
+.award-head .badge {
+  order: -1;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 11px;
+  font-weight: 600;
 }
 .award-title {
   margin: 0;
@@ -794,6 +840,11 @@ section:last-of-type {
   background: #fff;
   padding: 2px 4px;
   border-radius: 4px;
+}
+.award-logo-lg {
+  height: 44px;
+  padding: 4px 6px;
+  border-radius: 6px;
 }
 .award-link {
   display: inline-flex;
@@ -853,6 +904,29 @@ section:last-of-type {
 .timeline-body { display: flex; flex-direction: column; gap: 4px }
 .timeline-title { font-weight: 600; color: var(--text); font-size: 15.5px; letter-spacing: -0.01em; line-height: 1.35 }
 .timeline-desc { font-size: 14.5px; line-height: 1.6; max-width: 70ch }
+.timeline-sub {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0 0 0 14px;
+  border-left: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.timeline-sub li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 13.5px;
+  line-height: 1.5;
+  max-width: 70ch;
+}
+.timeline-sub-title {
+  font-weight: 600;
+  font-size: 13.5px;
+  color: var(--text);
+  letter-spacing: -0.005em;
+}
 .timeline-year {
   color: var(--brand);
   font-family: var(--font-mono);

@@ -1,28 +1,54 @@
 [
   {
-    "title": "Amharic Handwritten & Machine Printed Character Recognition Using Deep CNN with Random Search Hyperparameter Optimization Algorithm",
-    "url": "https://doi.org/10.21203/rs.3.rs-2878655/v1",
-    "venue": "Biniam Ewnetu Ejigu, Natnael Tilahun Sinshaw, Beakal Gizachew Assefa, Jukka Heikkonen, Rajeev Kanth, and Sudhir Kumar Mohapatra, <em>9th International Conference on Soft Computing: Theories and Applications (SoCTA2023)</em>, 2023."
-},
-{
-    "title": "Sigatoka and Xanthomonas banana leaf disease detection via transfer learning",
+    "title": "Blog Data Showdown: Machine Learning vs Neuro-Symbolic Models for Gender Classification",
+    "url": "https://doi.org/10.1109/ICT4DA67218.2025.11282773",
+    "venue": "Natnael Tilahun Sinshaw, Mengmei He, Tadesse K. Bahiru, and Sudhir Kumar Mohapatra, <em>EAI International Conference on ICT for Development for Africa (ICT4DA)</em>, IEEE, 2025.",
+    "links": {
+      "arxiv": "https://arxiv.org/abs/2512.16687"
+    }
+  },
+  {
+    "title": "Auditing and Mitigating Bias in Gender Classification Algorithms: A Data-Centric Approach",
+    "url": "https://doi.org/10.1109/ICT4DA67218.2025.11282712",
+    "venue": "Tadesse K. Bahiru, Natnael Tilahun Sinshaw, Teshager Hailemariam Moges, and Dheeraj Kumar Singh, <em>EAI International Conference on ICT for Development for Africa (ICT4DA)</em>, IEEE, 2025.",
+    "links": {
+      "arxiv": "https://arxiv.org/abs/2510.17873",
+      "pdf": "https://www.researchgate.net/publication/396747151_Auditing_and_Mitigating_Bias_in_Gender_Classification_Algorithms_A_Data-Centric_Approach"
+    }
+  },
+  {
+    "title": "Sigatoka and Xanthomonas Banana Leaf Disease Detection via Transfer Learning",
     "url": "https://doi.org/10.24200/sci.2024.62306.7766",
-    "venue": "Yordanos Hailu Genet, Natnael Tilahun Sinshaw, Beakal Gizachew Assefa, and Sudhir Kumar Mohapatra, <em>Scientia Iranica</em>, vol. 31, no. 21, pp. 1939-1947, 2024."
+    "venue": "Yordanos Hailu Genet, Natnael Tilahun Sinshaw, Beakal Gizachew Assefa, and Sudhir Kumar Mohapatra, <em>Scientia Iranica</em>, vol. 31, no. 21, pp. 1939-1947, 2024.",
+    "links": {
+      "pdf": "https://scientiairanica.sharif.edu/article_23585_40f1c35a20287b8597310726aefd57ac.pdf"
+    }
+  },
+  {
+    "title": "Deep Learning Approach for Amharic Character Recognition with Random Search Hyperparameter Optimization",
+    "url": "https://doi.org/10.21203/rs.3.rs-2878655/v1",
+    "venue": "Biniam Ewnetu Ejigu, Natnael Tilahun Sinshaw, Beakal Gizachew Assefa, Jukka Heikkonen, Rajeev Kanth, and Sudhir Kumar Mohapatra, <em>10th International Conference on Soft Computing: Theories and Applications (SoCTA2025)</em>, 2025."
   },
   {
     "title": "Enhanced Throttled Load Balancing Algorithm for Optimizing Cloud Computing Efficiency",
     "url": "https://doi.org/10.4018/979-8-3693-0593-5.ch009",
-    "venue": "Sudhir Kumar Mohapatra, Tarikwa Tesfa, Srinivas Prasad, and , Natnael Tilahun Sinshaw, <em>in Privacy Preservation and Secured Data Storage in Cloud Computing, Lakshmi D. and Amit Kumar Tyagi, Eds. Hershey, PA, USA: IGI Global Scientific Publishing</em>, 2023, pp. 197-225."
+    "venue": "Sudhir Kumar Mohapatra, Tarikwa Tesfa, Srinivas Prasad, and Natnael Tilahun Sinshaw, <em>in Privacy Preservation and Secured Data Storage in Cloud Computing, Lakshmi D. and Amit Kumar Tyagi, Eds. Hershey, PA, USA: IGI Global Scientific Publishing</em>, 2023, pp. 197-225."
   },
   {
-    "title": "Transfer Learning based Breast Cancer Classification via Deep Convolutional Neural Network",
+    "title": "Transfer Learning Based Breast Cancer Classification via Deep Convolutional Neural Network",
     "url": "https://doi.org/10.5815/ijem.2023.04.04",
-    "venue": "Markos Wondim Walle, Kula Kakeba Tune, Natnael Tilahun Sinshaw, and Sudhir Kumar Mohapatra, <em>International Journal of Engineering and Manufacturing (IJEM)</em>, vol. 13, no. 4, pp. 34-43, 2023."
+    "venue": "Markos Wondim Walle, Kula Kakeba Tune, Natnael Tilahun Sinshaw, and Sudhir Kumar Mohapatra, <em>International Journal of Engineering and Manufacturing (IJEM)</em>, vol. 13, no. 4, pp. 34-43, 2023.",
+    "links": {
+      "pdf": "http://www.mecs-press.org/ijem/ijem-v13-n4/IJEM-V13-N4-4.pdf"
+    }
   },
   {
     "title": "Applications of Computer Vision on Automatic Potato Plant Disease Detection: A Systematic Literature Review",
     "url": "https://doi.org/10.1155/2022/7186687",
-    "venue": "Natnael Tilahun Sinshaw, Beakal Gizachew Assefa, Sudhir Kumar Mohapatra, and Asrat Mulatu Beyene, <em>Computational Intelligence and Neuroscience</em>, vol. 2022, no. 1, p. 7186687, 2022."
+    "venue": "Natnael Tilahun Sinshaw, Beakal Gizachew Assefa, Sudhir Kumar Mohapatra, and Asrat Mulatu Beyene, <em>Computational Intelligence and Neuroscience</em>, vol. 2022, no. 1, p. 7186687, 2022.",
+    "links": {
+      "pdf": "https://downloads.hindawi.com/journals/cin/2022/7186687.pdf"
+    }
   },
   {
     "title": "Transfer Learning and Data Augmentation Based CNN Model for Potato Late Blight Disease Detection",
