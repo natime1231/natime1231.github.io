@@ -1,5 +1,10 @@
 [
   {
+    "title": "Deep Learning Approach for Amharic Character Recognition with Random Search Hyperparameter Optimization",
+    "url": "https://doi.org/10.1007/978-3-032-26370-4_30",
+    "venue": "Biniam Ewnetu Ejigu, Natnael Tilahun Sinshaw, Beakal Gizachew Assefa, Jukka Heikkonen, Rajeev Kanth, and Sudhir Kumar Mohapatra, <em>in Soft Computing: Theories and Applications (SoCTA 2025), Lecture Notes in Networks and Systems</em>, vol. 1980, Springer, Cham, 2026."
+  },
+  {
     "title": "Blog Data Showdown: Machine Learning vs Neuro-Symbolic Models for Gender Classification",
     "url": "https://doi.org/10.1109/ICT4DA67218.2025.11282773",
     "venue": "Natnael Tilahun Sinshaw, Mengmei He, Tadesse K. Bahiru, and Sudhir Kumar Mohapatra, <em>EAI International Conference on ICT for Development for Africa (ICT4DA)</em>, IEEE, 2025.",
@@ -23,11 +28,6 @@
     "links": {
       "pdf": "https://scientiairanica.sharif.edu/article_23585_40f1c35a20287b8597310726aefd57ac.pdf"
     }
-  },
-  {
-    "title": "Deep Learning Approach for Amharic Character Recognition with Random Search Hyperparameter Optimization",
-    "url": "https://doi.org/10.21203/rs.3.rs-2878655/v1",
-    "venue": "Biniam Ewnetu Ejigu, Natnael Tilahun Sinshaw, Beakal Gizachew Assefa, Jukka Heikkonen, Rajeev Kanth, and Sudhir Kumar Mohapatra, <em>10th International Conference on Soft Computing: Theories and Applications (SoCTA2025)</em>, 2025."
   },
   {
     "title": "Enhanced Throttled Load Balancing Algorithm for Optimizing Cloud Computing Efficiency",
