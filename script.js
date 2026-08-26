@@ -33,8 +33,18 @@ if (pubList) {
         return m ? Math.max(...m.map(Number)) : 0
       }
       data.sort((a, b) => yearOf(b) - yearOf(a))
+      // Escape untrusted values before interpolating into markup, and allow
+      // only http(s) hrefs so a stray javascript:/data: URL can't execute.
+      const esc = s => String(s ?? '').replace(/[&<>"']/g, c =>
+        ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]))
+      const safeUrl = u => {
+        try {
+          const parsed = new URL(String(u), location.href)
+          return ['http:', 'https:'].includes(parsed.protocol) ? parsed.href : '#'
+        } catch { return '#' }
+      }
       const linkBtn = (href, label, icon) =>
-        `<a class="pub-link" href="${href}" target="_blank" rel="noopener"><i class="${icon}"></i>${label}</a>`
+        `<a class="pub-link" href="${esc(safeUrl(href))}" target="_blank" rel="noopener noreferrer"><i class="${esc(icon)}"></i>${esc(label)}</a>`
       pubList.innerHTML = data.map(pub => {
         const links = []
         if (pub.url) links.push(linkBtn(pub.url, 'DOI', 'fa-solid fa-link'))
@@ -44,8 +54,8 @@ if (pubList) {
         if (pub.links?.dataset) links.push(linkBtn(pub.links.dataset, 'Dataset', 'fa-solid fa-database'))
         return `
         <li>
-          <div class="pub-title"><a href="${pub.url}" target="_blank" rel="noopener">${pub.title}</a></div>
-          <div class="pub-venue">${pub.venue}</div>
+          <div class="pub-title"><a href="${esc(safeUrl(pub.url))}" target="_blank" rel="noopener noreferrer">${esc(pub.title)}</a></div>
+          <div class="pub-venue">${esc(pub.venue)}</div>
           <div class="pub-links">${links.join('')}</div>
         </li>`
       }).join('')
