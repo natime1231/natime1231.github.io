@@ -958,6 +958,14 @@ section:last-of-type {
 .scholar-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap }
 
 .contact-form { display: flex; flex-direction: column; gap: 14px }
+/* Off-screen decoy input; left empty by real visitors. */
+.form-decoy {
+  position: absolute;
+  left: -9999px;
+  width: 1px; height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
 .form-group { display: flex; flex-direction: column; gap: 6px }
 .form-group label {
   font-family: var(--font-mono);
